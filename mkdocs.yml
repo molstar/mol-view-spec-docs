@@ -1,4 +1,4 @@
-site_name: Mol View Spec Documentation
+site_name: MolViewSpec Documentation
 theme:
   name: null
   custom_dir: mkdocs-material/material
