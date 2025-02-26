@@ -22,7 +22,6 @@ The MolViewSpec toolkit includes:
 
 -   [**MolViewSpec home page**](https://molstar.org/mol-view-spec/) with plenty of examples
 -   [**Interactive Google Colab example**](https://colab.research.google.com/drive/1O2TldXlS01s-YgkD9gy87vWsfCBTYuz9) showing the MolViewSpec Python package in action
--   [**MolViewSpec extension in Mol\***](https://github.com/molstar/molstar/blob/master/docs/extensions/mvs/README.md) documentation
 
 ---
 
@@ -34,15 +33,18 @@ MolViewSpec uses a tree-based approach to compose complex scenes from simple bui
 -   **Parse** - parse structural data in various formats
 -   **Structure** - create structure (supports assemblies, crystal symmetry, multi-model structures)
 -   **Transform** - apply rotation and translation to a structure
--   **Component** - select substructures (components) of a structure, e.g.
--   **Representation** - define standard structure representation modes (cartoon, ball-and-stick...)
--   **Color** - define custom colors for selections
+-   **Component** - select substructures (components) of a structure, e.g. by chain identifier or sequence position
+-   **Representation** - define structure representation modes (cartoon, ball-and-stick, ...), including support for coarse-grained IHM data
+-   **Color** - define custom colors (including opacity) for selections
 -   **Label** - define labels (textual representation in the 3D scene)
 -   **Tooltip** - define tooltips (text shown when interacting with a component)
 -   **Camera** - set camera position and orientation explicitly
--   **Focus** - set camera position and orientation automatically to focus a given component
+-   **Focus** - set camera position and orientation automatically to focus a given component (optionally: render non-covalent interactions)
+-   **Volumetric Data** - render electron density data
 -   **Canvas** - set background color
 -   **Annotations** - create data-driven components, colorings, labels, or tooltips; based on _MolViewSpec annotations_ (additional data stored either in the source structure file (mmcif, bcif) or in an external annotation file referenced by URI)
+-   **Primitives** - draw custom ellipses, boxes, arrows, or meshes
+-   **Multiple States & Animations** - tell molecular stories by chaining individual scenes and views
 
 ---
 
