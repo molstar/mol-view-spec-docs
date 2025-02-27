@@ -53,4 +53,14 @@ There are three kinds of selectors:
     selector: [{ label_asym_id: 'A', end_label_seq_id: 100 }, { type_symbol: 'MG' }];
     ```
 
+Component expressions can be applied to primitives as well. Furthermore, a `ref` can be provided to make selections with
+a specific node when working e.g. with multiple structures.
+Any MVS node allows you to set an anchor:
+
+    builder.download(url=url).parse(format="mmcif").model_structure(ref="X")
+    
+This `ref` can then be referenced in the context of a selection:
+
+    PrimitiveComponentExpressions(structure_ref="X", expressions=[ComponentExpression(auth_seq_id=508)])
+
 An alternative to using selectors is using [MVS annotations](./annotations.md). This means defining the selections in a separate file and referencing them from the MVS file.
