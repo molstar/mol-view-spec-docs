@@ -14,7 +14,7 @@ The MolViewSpec toolkit includes:
 
 -   **MolViewSpec viewer extensions** provide ability to interpret and render MolViewSpec States in individual molecular viewers. Currently, there is only one viewer extension:
 
-    -   [**MolViewSpec extension in Mol\***](https://github.com/molstar/molstar/blob/master/docs/extensions/mvs/README.md). This extension also serves as the reference implementation for MolViewSpec viewer extensions.
+    -   [**MolViewSpec extension in Mol\***](https://github.com/molstar/molstar/tree/master/docs/docs/extensions/mvs). This extension also serves as the reference implementation for MolViewSpec viewer extensions.
 
 ---
 
