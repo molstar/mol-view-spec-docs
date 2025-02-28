@@ -10,7 +10,7 @@ The MolViewSpec toolkit includes:
 
     -   in Python via [**MolViewSpec Python package**](https://pypi.org/project/molviewspec/)
 
-    -   in JavaScript/TypeScript via [**MolViewSpec extension in Mol\***](https://github.com/molstar/molstar/blob/master/docs/extensions/mvs/README.md)
+    -   in JavaScript/TypeScript via [**MolViewSpec extension in Mol\***](https://github.com/molstar/molstar/tree/master/docs/docs/extensions/mvs)
 
 -   **MolViewSpec viewer extensions** provide ability to interpret and render MolViewSpec States in individual molecular viewers. Currently, there is only one viewer extension:
 
