@@ -34,7 +34,11 @@ nav:
   - Selectors: 'selectors.md'
   - Annotations: 'annotations.md'
   - Camera Settings: 'camera-settings.md'
-  - Mol* MVS Extension: 
+  - Primitives: 'primitives.md'
+  - Volumetric Data: 'volumes.md'
+  - Animations: 'animations.md'
+  - Mol* MVS Extension:
     - Overview: 'mvs-molstar-extension.md'
     - Integration Examples: 'mvs-molstar-extension-integration.md'
+  - Demos: 'demos.md'
 repo_url: https://github.com/molstar/mol-view-spec-docs
