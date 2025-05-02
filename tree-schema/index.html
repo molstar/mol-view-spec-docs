@@ -1,0 +1,2046 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-6.2.6">
+    
+    
+      
+        <title>Tree Schema - MolViewSpec Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#molviewspec-tree-schema-v1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="MolViewSpec Documentation" class="md-header-nav__button md-logo" aria-label="MolViewSpec Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            MolViewSpec Documentation
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Tree Schema
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/molstar/mol-view-spec-docs" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MolViewSpec Documentation" class="md-nav__button md-logo" aria-label="MolViewSpec Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    MolViewSpec Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/molstar/mol-view-spec-docs" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tree Schema
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Tree Schema
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#root" class="md-nav__link">
+    root
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download" class="md-nav__link">
+    download
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parse" class="md-nav__link">
+    parse
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transform" class="md-nav__link">
+    transform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component" class="md-nav__link">
+    component
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component_from_uri" class="md-nav__link">
+    component_from_uri
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component_from_source" class="md-nav__link">
+    component_from_source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representation" class="md-nav__link">
+    representation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#volume" class="md-nav__link">
+    volume
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#volume_representation" class="md-nav__link">
+    volume_representation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color" class="md-nav__link">
+    color
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color_from_uri" class="md-nav__link">
+    color_from_uri
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color_from_source" class="md-nav__link">
+    color_from_source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opacity" class="md-nav__link">
+    opacity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#label" class="md-nav__link">
+    label
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#label_from_uri" class="md-nav__link">
+    label_from_uri
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#label_from_source" class="md-nav__link">
+    label_from_source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tooltip" class="md-nav__link">
+    tooltip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tooltip_from_uri" class="md-nav__link">
+    tooltip_from_uri
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tooltip_from_source" class="md-nav__link">
+    tooltip_from_source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#focus" class="md-nav__link">
+    focus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camera" class="md-nav__link">
+    camera
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    canvas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitives" class="md-nav__link">
+    primitives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitives_from_uri" class="md-nav__link">
+    primitives_from_uri
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive" class="md-nav__link">
+    primitive
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selectors/" class="md-nav__link">
+        Selectors
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../annotations/" class="md-nav__link">
+        Annotations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../camera-settings/" class="md-nav__link">
+        Camera Settings
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primitives/" class="md-nav__link">
+        Primitives
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../volumes/" class="md-nav__link">
+        Volumetric Data
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animations/" class="md-nav__link">
+        Animations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" >
+      
+      <label class="md-nav__link" for="nav-9">
+        Mol* MVS Extension
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mol* MVS Extension" data-md-level="1">
+        <label class="md-nav__title" for="nav-9">
+          <span class="md-nav__icon md-icon"></span>
+          Mol* MVS Extension
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mvs-molstar-extension/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mvs-molstar-extension/integration/" class="md-nav__link">
+        Integration Examples
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mvs-molstar-extension/load-extensions/" class="md-nav__link">
+        Custom Load Extensions
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/" class="md-nav__link">
+        Demos
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#root" class="md-nav__link">
+    root
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download" class="md-nav__link">
+    download
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parse" class="md-nav__link">
+    parse
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transform" class="md-nav__link">
+    transform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component" class="md-nav__link">
+    component
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component_from_uri" class="md-nav__link">
+    component_from_uri
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component_from_source" class="md-nav__link">
+    component_from_source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representation" class="md-nav__link">
+    representation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#volume" class="md-nav__link">
+    volume
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#volume_representation" class="md-nav__link">
+    volume_representation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color" class="md-nav__link">
+    color
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color_from_uri" class="md-nav__link">
+    color_from_uri
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color_from_source" class="md-nav__link">
+    color_from_source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opacity" class="md-nav__link">
+    opacity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#label" class="md-nav__link">
+    label
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#label_from_uri" class="md-nav__link">
+    label_from_uri
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#label_from_source" class="md-nav__link">
+    label_from_source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tooltip" class="md-nav__link">
+    tooltip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tooltip_from_uri" class="md-nav__link">
+    tooltip_from_uri
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tooltip_from_source" class="md-nav__link">
+    tooltip_from_source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#focus" class="md-nav__link">
+    focus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camera" class="md-nav__link">
+    camera
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    canvas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitives" class="md-nav__link">
+    primitives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitives_from_uri" class="md-nav__link">
+    primitives_from_uri
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive" class="md-nav__link">
+    primitive
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/molstar/mol-view-spec-docs/edit/master/docs/tree-schema.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="molviewspec-tree-schema-v1">MolViewSpec tree schema v1</h1>
+<p>This is the exhaustive list of MolViewSpec node kinds, their parameters, and parent-child relationships.
+Parameters with <code>?:</code> are optional, i.e. they may be omitted, meaning that the default value should be used.
+Parameters with <code>:</code> are required, i.e. omitting them will result in an invalid MolViewSpec tree.</p>
+<p>This specification is formalized by the <a href="../files/molviewspec-v1-openapi-schema.json">OpenAPI JSON schema</a>.</p>
+<p>(This document was auto-generated by <code>node lib/commonjs/cli/mvs/mvs-print-schema --markdown</code> in Mol*.)</p>
+<h2 id="root"><code>root</code></h2>
+<p>[Root of the tree must be of this kind]</p>
+<p>Auxiliary node kind that only appears as the tree root.</p>
+<p>Parent: none</p>
+<p>Params:</p>
+<h2 id="download"><code>download</code></h2>
+<p>This node instructs to retrieve a data resource.</p>
+<p>Parent: <code>root</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>url:</code></strong><code>string</code></li>
+</ul>
+<p>URL of the data resource.</p>
+<h2 id="parse"><code>parse</code></h2>
+<p>This node instructs to parse a data resource.</p>
+<p>Parent: <code>download</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>format:</code></strong><code>"mmcif" | "bcif" | "pdb" | "map"</code></li>
+</ul>
+<p>Format of the input data resource.</p>
+<h2 id="structure"><code>structure</code></h2>
+<p>This node instructs to create a structure from a parsed data resource. "Structure" refers to an internal representation of molecular coordinates without any visual representation.</p>
+<p>Parent: <code>parse</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>type:</code></strong><code>"model" | "assembly" | "symmetry" | "symmetry_mates"</code></li>
+</ul>
+<p>Type of structure to be created (<code>"model"</code> for original model coordinates, <code>"assembly"</code> for assembly structure, <code>"symmetry"</code> for a set of crystal unit cells based on Miller indices, <code>"symmetry_mates"</code> for a set of asymmetric units within a radius from the original model).</p>
+<ul>
+<li><strong><code>block_header?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Header of the CIF block to read coordinates from (only applies when the input data are from CIF or BinaryCIF). If <code>null</code>, block is selected based on <code>block_index</code>.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>block_index?:</code></strong><code>Integer</code></li>
+</ul>
+<p>0-based index of the CIF block to read coordinates from (only applies when the input data are from CIF or BinaryCIF and <code>block_header</code> is <code>null</code>).</p>
+<p>Default: <code>0</code></p>
+<ul>
+<li><strong><code>model_index?:</code></strong><code>Integer</code></li>
+</ul>
+<p>0-based index of model in case the input data contain multiple models.</p>
+<p>Default: <code>0</code></p>
+<ul>
+<li><strong><code>assembly_id?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Assembly identifier (only applies when <code>kind</code> is <code>"assembly"</code>). If <code>null</code>, the first assembly is selected.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>radius?:</code></strong><code>number</code></li>
+</ul>
+<p>Distance (in Angstroms) from the original model in which asymmetric units should be included (only applies when <code>kind</code> is <code>"symmetry_mates"</code>).</p>
+<p>Default: <code>5</code></p>
+<ul>
+<li><strong><code>ijk_min?:</code></strong><code>[Integer, Integer, Integer]</code></li>
+</ul>
+<p>Miller indices of the bottom-left unit cell to be included (only applies when <code>kind</code> is <code>"symmetry"</code>).</p>
+<p>Default: <code>[-1, -1, -1]</code></p>
+<ul>
+<li><strong><code>ijk_max?:</code></strong><code>[Integer, Integer, Integer]</code></li>
+</ul>
+<p>Miller indices of the top-right unit cell to be included (only applies when <code>kind</code> is <code>"symmetry"</code>).</p>
+<p>Default: <code>[1, 1, 1]</code></p>
+<h2 id="transform"><code>transform</code></h2>
+<p>This node instructs to rotate and/or translate structure coordinates.</p>
+<p>Parent: <code>structure</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>rotation?:</code></strong><code>Array&lt;number&gt;</code></li>
+</ul>
+<p>Rotation matrix (3x3 matrix flattened in column major format (j*3+i indexing), this is equivalent to Fortran-order in numpy). This matrix will multiply the structure coordinates from the left. The default value is the identity matrix (corresponds to no rotation).</p>
+<p>Default: <code>[1, 0, 0, 0, 1, 0, 0, 0, 1]</code></p>
+<ul>
+<li><strong><code>translation?:</code></strong><code>[number, number, number]</code></li>
+</ul>
+<p>Translation vector, applied to the structure coordinates after rotation. The default value is the zero vector (corresponds to no translation).</p>
+<p>Default: <code>[0, 0, 0]</code></p>
+<h2 id="component"><code>component</code></h2>
+<p>This node instructs to create a component (i.e. a subset of the parent structure).</p>
+<p>Parent: <code>structure</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>selector:</code></strong><code>("all" | "polymer" | "protein" | "nucleic" | "branched" | "ligand" | "ion" | "water" | "coarse") | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt;</code></li>
+</ul>
+<p>Defines what part of the parent structure should be included in this component.</p>
+<h2 id="component_from_uri"><code>component_from_uri</code></h2>
+<p>This node instructs to create a component defined by an external annotation resource.</p>
+<p>Parent: <code>structure</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>uri:</code></strong><code>string</code></li>
+</ul>
+<p>URL of the annotation resource.</p>
+<ul>
+<li><strong><code>format:</code></strong><code>"cif" | "bcif" | "json"</code></li>
+</ul>
+<p>Format of the annotation resource.</p>
+<ul>
+<li><strong><code>schema:</code></strong><code>"whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"</code></li>
+</ul>
+<p>Annotation schema defines what fields in the annotation will be taken into account.</p>
+<ul>
+<li><strong><code>block_header?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Header of the CIF block to read annotation from (only applies when <code>format</code> is <code>"cif"</code> or <code>"bcif"</code>). If <code>null</code>, block is selected based on <code>block_index</code>.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>block_index?:</code></strong><code>Integer</code></li>
+</ul>
+<p>0-based index of the CIF block to read annotation from (only applies when <code>format</code> is <code>"cif"</code> or <code>"bcif"</code> and <code>block_header</code> is <code>null</code>).</p>
+<p>Default: <code>0</code></p>
+<ul>
+<li><strong><code>category_name?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Name of the CIF category to read annotation from (only applies when <code>format</code> is <code>"cif"</code> or <code>"bcif"</code>). If <code>null</code>, the first category in the block is used.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>field_name?:</code></strong><code>string</code></li>
+</ul>
+<p>Name of the column in CIF or field name (key) in JSON that contains the component identifier.</p>
+<p>Default: <code>"component"</code></p>
+<ul>
+<li><strong><code>field_values?:</code></strong><code>Array&lt;string&gt; | null</code></li>
+</ul>
+<p>List of component identifiers (i.e. values in the field given by <code>field_name</code>) which should be included in this component. If <code>null</code>, component identifiers are ignored (all annotation rows are included), and <code>field_name</code> field can be dropped from the annotation.</p>
+<p>Default: <code>null</code></p>
+<h2 id="component_from_source"><code>component_from_source</code></h2>
+<p>This node instructs to create a component defined by an annotation resource included in the same file this structure was loaded from. Only applicable if the structure was loaded from an mmCIF or BinaryCIF file.</p>
+<p>Parent: <code>structure</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>schema:</code></strong><code>"whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"</code></li>
+</ul>
+<p>Annotation schema defines what fields in the annotation will be taken into account.</p>
+<ul>
+<li><strong><code>block_header?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Header of the CIF block to read annotation from. If <code>null</code>, block is selected based on <code>block_index</code>.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>block_index?:</code></strong><code>Integer</code></li>
+</ul>
+<p>0-based index of the CIF block to read annotation from (only applies when <code>block_header</code> is <code>null</code>).</p>
+<p>Default: <code>0</code></p>
+<ul>
+<li><strong><code>category_name?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Name of the CIF category to read annotation from. If <code>null</code>, the first category in the block is used.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>field_name?:</code></strong><code>string</code></li>
+</ul>
+<p>Name of the column in CIF or field name (key) in JSON that contains the component identifier.</p>
+<p>Default: <code>"component"</code></p>
+<ul>
+<li><strong><code>field_values?:</code></strong><code>Array&lt;string&gt; | null</code></li>
+</ul>
+<p>List of component identifiers (i.e. values in the field given by <code>field_name</code>) which should be included in this component. If <code>null</code>, component identifiers are ignored (all annotation rows are included), and <code>field_name</code> field can be dropped from the annotation.</p>
+<p>Default: <code>null</code></p>
+<h2 id="representation"><code>representation</code></h2>
+<p>This node instructs to create a visual representation of a component.</p>
+<p>Parent: <code>component</code> or <code>component_from_uri</code> or <code>component_from_source</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>type:</code></strong><code>cartoon | ball_and_stick | spacefill | carbohydrate | surface</code></li>
+</ul>
+<p>Representation type</p>
+<p>[This parameter determines the rest of parameters]</p>
+<p><strong>Case <code>type: "cartoon"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>size_factor?:</code></strong><code>number</code></p>
+<p>Scales the corresponding visuals.</p>
+<p>Default: <code>1</code></p>
+</li>
+<li>
+<p><strong><code>tubular_helices?:</code></strong><code>boolean</code></p>
+<p>Simplify corkscrew helices to tubes.</p>
+<p>Default: <code>false</code></p>
+</li>
+</ul>
+<p><strong>Case <code>type: "ball_and_stick"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>size_factor?:</code></strong><code>number</code></p>
+<p>Scales the corresponding visuals.</p>
+<p>Default: <code>1</code></p>
+</li>
+<li>
+<p><strong><code>ignore_hydrogens?:</code></strong><code>boolean</code></p>
+<p>Controls whether hydrogen atoms are drawn.</p>
+<p>Default: <code>false</code></p>
+</li>
+</ul>
+<p><strong>Case <code>type: "spacefill"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>size_factor?:</code></strong><code>number</code></p>
+<p>Scales the corresponding visuals.</p>
+<p>Default: <code>1</code></p>
+</li>
+<li>
+<p><strong><code>ignore_hydrogens?:</code></strong><code>boolean</code></p>
+<p>Controls whether hydrogen atoms are drawn.</p>
+<p>Default: <code>false</code></p>
+</li>
+</ul>
+<p><strong>Case <code>type: "carbohydrate"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>size_factor?:</code></strong><code>number</code></p>
+<p>Scales the corresponding visuals.</p>
+<p>Default: <code>1</code></p>
+</li>
+</ul>
+<p><strong>Case <code>type: "surface"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>size_factor?:</code></strong><code>number</code></p>
+<p>Scales the corresponding visuals.</p>
+<p>Default: <code>1</code></p>
+</li>
+<li>
+<p><strong><code>ignore_hydrogens?:</code></strong><code>boolean</code></p>
+<p>Controls whether hydrogen atoms are drawn.</p>
+<p>Default: <code>false</code></p>
+</li>
+</ul>
+<h2 id="volume"><code>volume</code></h2>
+<p>This node instructs to create a volume from a parsed data resource. "Volume" refers to an internal representation of volumetric data without any visual representation.</p>
+<p>Parent: <code>parse</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>channel_id?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Channel identifier (only applies when the input data contain multiple channels).</p>
+<p>Default: <code>null</code></p>
+<h2 id="volume_representation"><code>volume_representation</code></h2>
+<p>This node instructs to create a visual representation of a volume.</p>
+<p>Parent: <code>volume</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>type:</code></strong><code>isosurface</code></li>
+</ul>
+<p>Representation type</p>
+<p>[This parameter determines the rest of parameters]</p>
+<p><strong>Case <code>type: "isosurface"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>relative_isovalue?:</code></strong><code>number | null</code></p>
+<p>Relative isovalue.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>absolute_isovalue?:</code></strong><code>number | null</code></p>
+<p>Absolute isovalue. Overrides <code>relative_isovalue</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>show_wireframe?:</code></strong><code>boolean</code></p>
+<p>Show mesh wireframe. Defaults to false.</p>
+<p>Default: <code>false</code></p>
+</li>
+<li>
+<p><strong><code>show_faces?:</code></strong><code>boolean</code></p>
+<p>Show mesh faces. Defaults to true.</p>
+<p>Default: <code>true</code></p>
+</li>
+</ul>
+<h2 id="color"><code>color</code></h2>
+<p>This node instructs to apply color to a visual representation.</p>
+<p>Parent: <code>representation</code> or <code>volume_representation</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>color?:</code></strong><code>ColorName | HexColor</code></li>
+</ul>
+<p>Color to apply to the representation. Can be either an X11 color name (e.g. <code>"red"</code>) or a hexadecimal code (e.g. <code>"#FF0011"</code>).</p>
+<p>Default: <code>"white"</code></p>
+<ul>
+<li><strong><code>selector?:</code></strong><code>("all" | "polymer" | "protein" | "nucleic" | "branched" | "ligand" | "ion" | "water" | "coarse") | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt;</code></li>
+</ul>
+<p>Defines to what part of the representation this color should be applied.</p>
+<p>Default: <code>"all"</code></p>
+<h2 id="color_from_uri"><code>color_from_uri</code></h2>
+<p>This node instructs to apply colors to a visual representation. The colors are defined by an external annotation resource.</p>
+<p>Parent: <code>representation</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>uri:</code></strong><code>string</code></li>
+</ul>
+<p>URL of the annotation resource.</p>
+<ul>
+<li><strong><code>format:</code></strong><code>"cif" | "bcif" | "json"</code></li>
+</ul>
+<p>Format of the annotation resource.</p>
+<ul>
+<li><strong><code>schema:</code></strong><code>"whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"</code></li>
+</ul>
+<p>Annotation schema defines what fields in the annotation will be taken into account.</p>
+<ul>
+<li><strong><code>block_header?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Header of the CIF block to read annotation from (only applies when <code>format</code> is <code>"cif"</code> or <code>"bcif"</code>). If <code>null</code>, block is selected based on <code>block_index</code>.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>block_index?:</code></strong><code>Integer</code></li>
+</ul>
+<p>0-based index of the CIF block to read annotation from (only applies when <code>format</code> is <code>"cif"</code> or <code>"bcif"</code> and <code>block_header</code> is <code>null</code>).</p>
+<p>Default: <code>0</code></p>
+<ul>
+<li><strong><code>category_name?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Name of the CIF category to read annotation from (only applies when <code>format</code> is <code>"cif"</code> or <code>"bcif"</code>). If <code>null</code>, the first category in the block is used.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>field_name?:</code></strong><code>string</code></li>
+</ul>
+<p>Name of the column in CIF or field name (key) in JSON that contains the color.</p>
+<p>Default: <code>"color"</code></p>
+<h2 id="color_from_source"><code>color_from_source</code></h2>
+<p>This node instructs to apply colors to a visual representation. The colors are defined by an annotation resource included in the same file this structure was loaded from. Only applicable if the structure was loaded from an mmCIF or BinaryCIF file.</p>
+<p>Parent: <code>representation</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>schema:</code></strong><code>"whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"</code></li>
+</ul>
+<p>Annotation schema defines what fields in the annotation will be taken into account.</p>
+<ul>
+<li><strong><code>block_header?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Header of the CIF block to read annotation from. If <code>null</code>, block is selected based on <code>block_index</code>.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>block_index?:</code></strong><code>Integer</code></li>
+</ul>
+<p>0-based index of the CIF block to read annotation from (only applies when <code>block_header</code> is <code>null</code>).</p>
+<p>Default: <code>0</code></p>
+<ul>
+<li><strong><code>category_name?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Name of the CIF category to read annotation from. If <code>null</code>, the first category in the block is used.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>field_name?:</code></strong><code>string</code></li>
+</ul>
+<p>Name of the column in CIF or field name (key) in JSON that contains the color.</p>
+<p>Default: <code>"color"</code></p>
+<h2 id="opacity"><code>opacity</code></h2>
+<p>This node instructs to apply opacity/transparency to a visual representation.</p>
+<p>Parent: <code>representation</code> or <code>volume_representation</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>opacity:</code></strong><code>number</code></li>
+</ul>
+<p>Opacity of a representation. 0.0: fully transparent, 1.0: fully opaque.</p>
+<h2 id="label"><code>label</code></h2>
+<p>This node instructs to add a label (textual visual representation) to a component.</p>
+<p>Parent: <code>component</code> or <code>component_from_uri</code> or <code>component_from_source</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>text:</code></strong><code>string</code></li>
+</ul>
+<p>Content of the shown label.</p>
+<h2 id="label_from_uri"><code>label_from_uri</code></h2>
+<p>This node instructs to add labels (textual visual representations) to parts of a structure. The labels are defined by an external annotation resource.</p>
+<p>Parent: <code>structure</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>uri:</code></strong><code>string</code></li>
+</ul>
+<p>URL of the annotation resource.</p>
+<ul>
+<li><strong><code>format:</code></strong><code>"cif" | "bcif" | "json"</code></li>
+</ul>
+<p>Format of the annotation resource.</p>
+<ul>
+<li><strong><code>schema:</code></strong><code>"whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"</code></li>
+</ul>
+<p>Annotation schema defines what fields in the annotation will be taken into account.</p>
+<ul>
+<li><strong><code>block_header?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Header of the CIF block to read annotation from (only applies when <code>format</code> is <code>"cif"</code> or <code>"bcif"</code>). If <code>null</code>, block is selected based on <code>block_index</code>.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>block_index?:</code></strong><code>Integer</code></li>
+</ul>
+<p>0-based index of the CIF block to read annotation from (only applies when <code>format</code> is <code>"cif"</code> or <code>"bcif"</code> and <code>block_header</code> is <code>null</code>).</p>
+<p>Default: <code>0</code></p>
+<ul>
+<li><strong><code>category_name?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Name of the CIF category to read annotation from (only applies when <code>format</code> is <code>"cif"</code> or <code>"bcif"</code>). If <code>null</code>, the first category in the block is used.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>field_name?:</code></strong><code>string</code></li>
+</ul>
+<p>Name of the column in CIF or field name (key) in JSON that contains the label text.</p>
+<p>Default: <code>"label"</code></p>
+<h2 id="label_from_source"><code>label_from_source</code></h2>
+<p>This node instructs to add labels (textual visual representations) to parts of a structure. The labels are defined by an annotation resource included in the same file this structure was loaded from. Only applicable if the structure was loaded from an mmCIF or BinaryCIF file.</p>
+<p>Parent: <code>structure</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>schema:</code></strong><code>"whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"</code></li>
+</ul>
+<p>Annotation schema defines what fields in the annotation will be taken into account.</p>
+<ul>
+<li><strong><code>block_header?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Header of the CIF block to read annotation from. If <code>null</code>, block is selected based on <code>block_index</code>.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>block_index?:</code></strong><code>Integer</code></li>
+</ul>
+<p>0-based index of the CIF block to read annotation from (only applies when <code>block_header</code> is <code>null</code>).</p>
+<p>Default: <code>0</code></p>
+<ul>
+<li><strong><code>category_name?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Name of the CIF category to read annotation from. If <code>null</code>, the first category in the block is used.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>field_name?:</code></strong><code>string</code></li>
+</ul>
+<p>Name of the column in CIF or field name (key) in JSON that contains the label text.</p>
+<p>Default: <code>"label"</code></p>
+<h2 id="tooltip"><code>tooltip</code></h2>
+<p>This node instructs to add a tooltip to a component. "Tooltip" is a text which is not a part of the visualization but should be presented to the users when they interact with the component (typically, the tooltip will be shown somewhere on the screen when the user hovers over a visual representation of the component).</p>
+<p>Parent: <code>component</code> or <code>component_from_uri</code> or <code>component_from_source</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>text:</code></strong><code>string</code></li>
+</ul>
+<p>Content of the shown tooltip.</p>
+<h2 id="tooltip_from_uri"><code>tooltip_from_uri</code></h2>
+<p>This node instructs to add tooltips to parts of a structure. The tooltips are defined by an external annotation resource.</p>
+<p>Parent: <code>structure</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>uri:</code></strong><code>string</code></li>
+</ul>
+<p>URL of the annotation resource.</p>
+<ul>
+<li><strong><code>format:</code></strong><code>"cif" | "bcif" | "json"</code></li>
+</ul>
+<p>Format of the annotation resource.</p>
+<ul>
+<li><strong><code>schema:</code></strong><code>"whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"</code></li>
+</ul>
+<p>Annotation schema defines what fields in the annotation will be taken into account.</p>
+<ul>
+<li><strong><code>block_header?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Header of the CIF block to read annotation from (only applies when <code>format</code> is <code>"cif"</code> or <code>"bcif"</code>). If <code>null</code>, block is selected based on <code>block_index</code>.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>block_index?:</code></strong><code>Integer</code></li>
+</ul>
+<p>0-based index of the CIF block to read annotation from (only applies when <code>format</code> is <code>"cif"</code> or <code>"bcif"</code> and <code>block_header</code> is <code>null</code>).</p>
+<p>Default: <code>0</code></p>
+<ul>
+<li><strong><code>category_name?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Name of the CIF category to read annotation from (only applies when <code>format</code> is <code>"cif"</code> or <code>"bcif"</code>). If <code>null</code>, the first category in the block is used.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>field_name?:</code></strong><code>string</code></li>
+</ul>
+<p>Name of the column in CIF or field name (key) in JSON that contains the tooltip text.</p>
+<p>Default: <code>"tooltip"</code></p>
+<h2 id="tooltip_from_source"><code>tooltip_from_source</code></h2>
+<p>This node instructs to add tooltips to parts of a structure. The tooltips are defined by an annotation resource included in the same file this structure was loaded from. Only applicable if the structure was loaded from an mmCIF or BinaryCIF file.</p>
+<p>Parent: <code>structure</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>schema:</code></strong><code>"whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"</code></li>
+</ul>
+<p>Annotation schema defines what fields in the annotation will be taken into account.</p>
+<ul>
+<li><strong><code>block_header?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Header of the CIF block to read annotation from. If <code>null</code>, block is selected based on <code>block_index</code>.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>block_index?:</code></strong><code>Integer</code></li>
+</ul>
+<p>0-based index of the CIF block to read annotation from (only applies when <code>block_header</code> is <code>null</code>).</p>
+<p>Default: <code>0</code></p>
+<ul>
+<li><strong><code>category_name?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Name of the CIF category to read annotation from. If <code>null</code>, the first category in the block is used.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>field_name?:</code></strong><code>string</code></li>
+</ul>
+<p>Name of the column in CIF or field name (key) in JSON that contains the tooltip text.</p>
+<p>Default: <code>"tooltip"</code></p>
+<h2 id="focus"><code>focus</code></h2>
+<p>This node instructs to set the camera focus to a component (zoom in).</p>
+<p>Parent: <code>root</code> or <code>component</code> or <code>component_from_uri</code> or <code>component_from_source</code> or <code>primitives</code> or <code>primitives_from_uri</code> or <code>volume</code> or <code>volume_representation</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>direction?:</code></strong><code>[number, number, number]</code></li>
+</ul>
+<p>Vector describing the direction of the view (camera position -&gt; focused target).</p>
+<p>Default: <code>[0, 0, -1]</code></p>
+<ul>
+<li><strong><code>up?:</code></strong><code>[number, number, number]</code></li>
+</ul>
+<p>Vector which will be aligned with the screen Y axis.</p>
+<p>Default: <code>[0, 1, 0]</code></p>
+<ul>
+<li><strong><code>radius?:</code></strong><code>number | null</code></li>
+</ul>
+<p>Radius of the focused sphere (overrides <code>radius_factor</code> and <code>radius_extra</code>).</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>radius_factor?:</code></strong><code>number</code></li>
+</ul>
+<p>Radius of the focused sphere relative to the radius of parent component (default: 1). Focused radius = component_radius * radius_factor + radius_extent.</p>
+<p>Default: <code>1</code></p>
+<ul>
+<li><strong><code>radius_extent?:</code></strong><code>number</code></li>
+</ul>
+<p>Addition to the radius of the focused sphere, if computed from the radius of parent component (default: 0). Focused radius = component_radius * radius_factor + radius_extent.</p>
+<p>Default: <code>0</code></p>
+<h2 id="camera"><code>camera</code></h2>
+<p>This node instructs to set the camera position and orientation.</p>
+<p>Parent: <code>root</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>target:</code></strong><code>[number, number, number]</code></li>
+</ul>
+<p>Coordinates of the point in space at which the camera is pointing.</p>
+<ul>
+<li><strong><code>position:</code></strong><code>[number, number, number]</code></li>
+</ul>
+<p>Coordinates of the camera.</p>
+<ul>
+<li><strong><code>up?:</code></strong><code>[number, number, number]</code></li>
+</ul>
+<p>Vector which will be aligned with the screen Y axis.</p>
+<p>Default: <code>[0, 1, 0]</code></p>
+<h2 id="canvas"><code>canvas</code></h2>
+<p>This node sets canvas properties.</p>
+<p>Parent: <code>root</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>background_color:</code></strong><code>ColorName | HexColor</code></li>
+</ul>
+<p>Color of the canvas background. Can be either an X11 color name (e.g. <code>"red"</code>) or a hexadecimal code (e.g. <code>"#FF0011"</code>).</p>
+<h2 id="primitives"><code>primitives</code></h2>
+<p>This node groups a list of geometrical primitives</p>
+<p>Parent: <code>structure</code> or <code>root</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>color?:</code></strong><code>ColorName | HexColor</code></li>
+</ul>
+<p>Default color for primitives in this group.</p>
+<p>Default: <code>"white"</code></p>
+<ul>
+<li><strong><code>label_color?:</code></strong><code>ColorName | HexColor</code></li>
+</ul>
+<p>Default label color for primitives in this group.</p>
+<p>Default: <code>"white"</code></p>
+<ul>
+<li><strong><code>tooltip?:</code></strong><code>string | null</code></li>
+</ul>
+<p>Default tooltip for primitives in this group.</p>
+<p>Default: <code>null</code></p>
+<ul>
+<li><strong><code>opacity?:</code></strong><code>number</code></li>
+</ul>
+<p>Opacity of primitive geometry in this group.</p>
+<p>Default: <code>1</code></p>
+<ul>
+<li><strong><code>label_opacity?:</code></strong><code>number</code></li>
+</ul>
+<p>Opacity of primitive labels in this group.</p>
+<p>Default: <code>1</code></p>
+<ul>
+<li><strong><code>instances?:</code></strong><code>Array&lt;Array&lt;number&gt;&gt; | null</code></li>
+</ul>
+<p>Instances of this primitive group defined as 4x4 column major (j * 4 + i indexing) transformation matrices.</p>
+<p>Default: <code>null</code></p>
+<h2 id="primitives_from_uri"><code>primitives_from_uri</code></h2>
+<p>This node loads a list of primitives from URI</p>
+<p>Parent: <code>structure</code> or <code>root</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>uri:</code></strong><code>string</code></li>
+</ul>
+<p>Location of the resource.</p>
+<ul>
+<li><strong><code>format:</code></strong><code>"mvs-node-json"</code></li>
+</ul>
+<p>Format of the data.</p>
+<ul>
+<li><strong><code>references?:</code></strong><code>Array&lt;string&gt;</code></li>
+</ul>
+<p>List of nodes the data are referencing.</p>
+<p>Default: <code>[]</code></p>
+<h2 id="primitive"><code>primitive</code></h2>
+<p>This node represents a geometrical primitive</p>
+<p>Parent: <code>primitives</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>kind:</code></strong><code>mesh | lines | tube | arrow | distance_measurement | angle_measurement | label | ellipse | ellipsoid | box</code></li>
+</ul>
+<p>Kind of geometrical primitive</p>
+<p>[This parameter determines the rest of parameters]</p>
+<p><strong>Case <code>kind: "mesh"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>vertices:</code></strong><code>Array&lt;number&gt;</code></p>
+<p>3*n_vertices length array of floats with vertex position (x1, y1, z1, ...).</p>
+</li>
+<li>
+<p><strong><code>indices:</code></strong><code>Array&lt;Integer&gt;</code></p>
+<p>3*n_triangles length array of indices into vertices that form triangles (t1_1, t1_2, t1_3, ...).</p>
+</li>
+<li>
+<p><strong><code>triangle_groups?:</code></strong><code>Array&lt;Integer&gt; | null</code></p>
+<p>Assign a number to each triangle to group them. If not specified, each triangle is considered a separate group (triangle i = group i).</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>group_colors?:</code></strong><code>{ [K in Integer]: (ColorName | HexColor) }</code></p>
+<p>Assign a color to each group. Where not assigned, uses <code>color</code>.</p>
+<p>Default: <code>{}</code></p>
+</li>
+<li>
+<p><strong><code>group_tooltips?:</code></strong><code>{ [K in Integer]: string }</code></p>
+<p>Assign a tooltip to each group. Where not assigned, uses <code>tooltip</code>.</p>
+<p>Default: <code>{}</code></p>
+</li>
+<li>
+<p><strong><code>color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p>Color of the triangles and wireframe. Can be overwritten by <code>group_colors</code>. If not specified, uses the parent primitives group <code>color</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>tooltip?:</code></strong><code>string | null</code></p>
+<p>Tooltip shown when hovering over the mesh. Can be overwritten by <code>group_tooltips</code>. If not specified, uses the parent primitives group <code>tooltip</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>show_triangles?:</code></strong><code>boolean</code></p>
+<p>Determine whether to render triangles of the mesh.</p>
+<p>Default: <code>true</code></p>
+</li>
+<li>
+<p><strong><code>show_wireframe?:</code></strong><code>boolean</code></p>
+<p>Determine whether to render wireframe of the mesh.</p>
+<p>Default: <code>false</code></p>
+</li>
+<li>
+<p><strong><code>wireframe_width?:</code></strong><code>number</code></p>
+<p>Wireframe line width (in screen-space units).</p>
+<p>Default: <code>1</code></p>
+</li>
+<li>
+<p><strong><code>wireframe_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p>Wireframe color. If not specified, uses <code>group_colors</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+</ul>
+<p><strong>Case <code>kind: "lines"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>vertices:</code></strong><code>Array&lt;number&gt;</code></p>
+<p>3*n_vertices length array of floats with vertex position (x1, y1, z1, ...).</p>
+</li>
+<li>
+<p><strong><code>indices:</code></strong><code>Array&lt;Integer&gt;</code></p>
+<p>2*n_lines length array of indices into vertices that form lines (l1_1, l1_2, ...).</p>
+</li>
+<li>
+<p><strong><code>line_groups?:</code></strong><code>Array&lt;Integer&gt; | null</code></p>
+<p>Assign a number to each triangle to group them. If not specified, each line is considered a separate group (line i = group i).</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>group_colors?:</code></strong><code>{ [K in Integer]: (ColorName | HexColor) }</code></p>
+<p>Assign a color to each group. Where not assigned, uses <code>color</code>.</p>
+<p>Default: <code>{}</code></p>
+</li>
+<li>
+<p><strong><code>group_tooltips?:</code></strong><code>{ [K in Integer]: string }</code></p>
+<p>Assign a tooltip to each group. Where not assigned, uses <code>tooltip</code>.</p>
+<p>Default: <code>{}</code></p>
+</li>
+<li>
+<p><strong><code>group_widths?:</code></strong><code>{ [K in Integer]: number }</code></p>
+<p>Assign a line width to each group. Where not assigned, uses <code>width</code>.</p>
+<p>Default: <code>{}</code></p>
+</li>
+<li>
+<p><strong><code>color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p>Color of the lines. Can be overwritten by <code>group_colors</code>. If not specified, uses the parent primitives group <code>color</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>tooltip?:</code></strong><code>string | null</code></p>
+<p>Tooltip shown when hovering over the lines. Can be overwritten by <code>group_tooltips</code>. If not specified, uses the parent primitives group <code>tooltip</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>width?:</code></strong><code>number</code></p>
+<p>Line width (in screen-space units). Can be overwritten by <code>group_widths</code>.</p>
+<p>Default: <code>1</code></p>
+</li>
+</ul>
+<p><strong>Case <code>kind: "tube"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>start:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p>Start point of the tube.</p>
+</li>
+<li>
+<p><strong><code>end:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p>End point of the tube.</p>
+</li>
+<li>
+<p><strong><code>radius?:</code></strong><code>number</code></p>
+<p>Tube radius (in Angstroms).</p>
+<p>Default: <code>0.05</code></p>
+</li>
+<li>
+<p><strong><code>dash_length?:</code></strong><code>number | null</code></p>
+<p>Length of each dash and gap between dashes. If not specified (null), draw full line.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p>Color of the tube. If not specified, uses the parent primitives group <code>color</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>tooltip?:</code></strong><code>string | null</code></p>
+<p>Tooltip to show when hovering over the tube. If not specified, uses the parent primitives group <code>tooltip</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+</ul>
+<p><strong>Case <code>kind: "arrow"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>start:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p>Start point of the arrow.</p>
+</li>
+<li>
+<p><strong><code>end?:</code></strong><code>([number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;) | null</code></p>
+<p>End point of the arrow.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>direction?:</code></strong><code>[number, number, number] | null</code></p>
+<p>If specified, the endpoint is computed as start + direction.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>length?:</code></strong><code>number | null</code></p>
+<p>Length of the arrow. If unset, the distance between start and end is used.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>show_start_cap?:</code></strong><code>boolean</code></p>
+<p>Draw a cap at the start of the arrow.</p>
+<p>Default: <code>false</code></p>
+</li>
+<li>
+<p><strong><code>start_cap_length?:</code></strong><code>number</code></p>
+<p>Length of the start cap.</p>
+<p>Default: <code>0.1</code></p>
+</li>
+<li>
+<p><strong><code>start_cap_radius?:</code></strong><code>number</code></p>
+<p>Radius of the start cap.</p>
+<p>Default: <code>0.1</code></p>
+</li>
+<li>
+<p><strong><code>show_end_cap?:</code></strong><code>boolean</code></p>
+<p>Draw a cap at the end of the arrow.</p>
+<p>Default: <code>false</code></p>
+</li>
+<li>
+<p><strong><code>end_cap_length?:</code></strong><code>number</code></p>
+<p>Length of the end cap.</p>
+<p>Default: <code>0.1</code></p>
+</li>
+<li>
+<p><strong><code>end_cap_radius?:</code></strong><code>number</code></p>
+<p>Radius of the end cap.</p>
+<p>Default: <code>0.1</code></p>
+</li>
+<li>
+<p><strong><code>show_tube?:</code></strong><code>boolean</code></p>
+<p>Draw a tube connecting the start and end points.</p>
+<p>Default: <code>true</code></p>
+</li>
+<li>
+<p><strong><code>tube_radius?:</code></strong><code>number</code></p>
+<p>Tube radius (in Angstroms).</p>
+<p>Default: <code>0.05</code></p>
+</li>
+<li>
+<p><strong><code>tube_dash_length?:</code></strong><code>number | null</code></p>
+<p>Length of each dash and gap between dashes. If not specified (null), draw full line.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p>Color of the tube. If not specified, uses the parent primitives group <code>color</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>tooltip?:</code></strong><code>string | null</code></p>
+<p>Tooltip to show when hovering over the arrow. If not specified, uses the parent primitives group <code>tooltip</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+</ul>
+<p><strong>Case <code>kind: "distance_measurement"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>start:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p>Start point of the tube.</p>
+</li>
+<li>
+<p><strong><code>end:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p>End point of the tube.</p>
+</li>
+<li>
+<p><strong><code>radius?:</code></strong><code>number</code></p>
+<p>Tube radius (in Angstroms).</p>
+<p>Default: <code>0.05</code></p>
+</li>
+<li>
+<p><strong><code>dash_length?:</code></strong><code>number | null</code></p>
+<p>Length of each dash and gap between dashes. If not specified (null), draw full line.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p>Color of the tube. If not specified, uses the parent primitives group <code>color</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>label_template?:</code></strong><code>string</code></p>
+<p>Template used to construct the label. Use {{distance}} as placeholder for the distance.</p>
+<p>Default: <code>"{{distance}}"</code></p>
+</li>
+<li>
+<p><strong><code>label_size?:</code></strong><code>number | null</code></p>
+<p>Size of the label (text height in Angstroms). If not specified, size will be relative to the distance (see label_auto_size_scale, label_auto_size_min).</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>label_auto_size_scale?:</code></strong><code>number</code></p>
+<p>Scaling factor for relative size.</p>
+<p>Default: <code>0.1</code></p>
+</li>
+<li>
+<p><strong><code>label_auto_size_min?:</code></strong><code>number</code></p>
+<p>Minimum size for relative size.</p>
+<p>Default: <code>0</code></p>
+</li>
+<li>
+<p><strong><code>label_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p>Color of the label. If not specified, uses the parent primitives group <code>label_color</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+</ul>
+<p><strong>Case <code>kind: "angle_measurement"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>a:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p>Point A.</p>
+</li>
+<li>
+<p><strong><code>b:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p>Point B.</p>
+</li>
+<li>
+<p><strong><code>c:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p>Point C.</p>
+</li>
+<li>
+<p><strong><code>label_template?:</code></strong><code>string</code></p>
+<p>Template used to construct the label. Use {{angle}} as placeholder for the angle in radians.</p>
+<p>Default: <code>"{{angle}}"</code></p>
+</li>
+<li>
+<p><strong><code>label_size?:</code></strong><code>number | null</code></p>
+<p>Size of the label (text height in Angstroms). If not specified, size will be relative to the distance (see label_auto_size_scale, label_auto_size_min).</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>label_auto_size_scale?:</code></strong><code>number</code></p>
+<p>Scaling factor for relative size.</p>
+<p>Default: <code>0.33</code></p>
+</li>
+<li>
+<p><strong><code>label_auto_size_min?:</code></strong><code>number</code></p>
+<p>Minimum size for relative size.</p>
+<p>Default: <code>0</code></p>
+</li>
+<li>
+<p><strong><code>label_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p>Color of the label. If not specified, uses the parent primitives group <code>label_color</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>show_vector?:</code></strong><code>boolean</code></p>
+<p>Draw vectors between (a, b) and (b, c).</p>
+<p>Default: <code>true</code></p>
+</li>
+<li>
+<p><strong><code>vector_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p>Color of the vectors.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>show_section?:</code></strong><code>boolean</code></p>
+<p>Draw a filled circle section representing the angle.</p>
+<p>Default: <code>true</code></p>
+</li>
+<li>
+<p><strong><code>section_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p>Color of the angle section. If not specified, the primitives group color is used.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>section_radius?:</code></strong><code>number | null</code></p>
+<p>Radius of the angle section. In angstroms.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>section_radius_scale?:</code></strong><code>number</code></p>
+<p>Factor to scale the radius of the angle section. Ignored if section_radius is set.</p>
+<p>Default: <code>0.33</code></p>
+</li>
+</ul>
+<p><strong>Case <code>kind: "label"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>position:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p>Position of this label.</p>
+</li>
+<li>
+<p><strong><code>text:</code></strong><code>string</code></p>
+<p>The label.</p>
+</li>
+<li>
+<p><strong><code>label_size?:</code></strong><code>number</code></p>
+<p>Size of the label (text height in Angstroms).</p>
+<p>Default: <code>1</code></p>
+</li>
+<li>
+<p><strong><code>label_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p>Color of the label. If not specified, uses the parent primitives group <code>label_color</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>label_offset?:</code></strong><code>number</code></p>
+<p>Camera-facing offset to prevent overlap with geometry.</p>
+<p>Default: <code>0</code></p>
+</li>
+</ul>
+<p><strong>Case <code>kind: "ellipse"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p>Color of the ellipse. If not specified, uses the parent primitives group <code>color</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>as_circle?:</code></strong><code>boolean</code></p>
+<p>If true, ignores radius_minor/magnitude of the minor axis.</p>
+<p>Default: <code>false</code></p>
+</li>
+<li>
+<p><strong><code>center:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p>The center of the ellipse.</p>
+</li>
+<li>
+<p><strong><code>major_axis?:</code></strong><code>[number, number, number] | null</code></p>
+<p>Major axis of this ellipse.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>minor_axis?:</code></strong><code>[number, number, number] | null</code></p>
+<p>Minor axis of this ellipse.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>major_axis_endpoint?:</code></strong><code>([number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;) | null</code></p>
+<p>Major axis endpoint. If specified, overrides major axis to be major_axis_endpoint - center.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>minor_axis_endpoint?:</code></strong><code>([number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;) | null</code></p>
+<p>Minor axis endpoint. If specified, overrides minor axis to be minor_axis_endpoint - center.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>radius_major?:</code></strong><code>number | null</code></p>
+<p>Radius of the major axis. If unset, the length of the major axis is used.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>radius_minor?:</code></strong><code>number | null</code></p>
+<p>Radius of the minor axis. If unset, the length of the minor axis is used.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>theta_start?:</code></strong><code>number</code></p>
+<p>Start of the arc. In radians</p>
+<p>Default: <code>0</code></p>
+</li>
+<li>
+<p><strong><code>theta_end?:</code></strong><code>number</code></p>
+<p>End of the arc. In radians</p>
+<p>Default: <code>6.283185307179586</code></p>
+</li>
+<li>
+<p><strong><code>tooltip?:</code></strong><code>string | null</code></p>
+<p>Tooltip to show when hovering over the tube. If not specified, uses the parent primitives group <code>tooltip</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+</ul>
+<p><strong>Case <code>kind: "ellipsoid"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p>Color of the ellipsoid. If not specified, uses the parent primitives group <code>color</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>center:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p>The center of the ellipsoid.</p>
+</li>
+<li>
+<p><strong><code>major_axis?:</code></strong><code>[number, number, number] | null</code></p>
+<p>Major axis of this ellipsoid.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>minor_axis?:</code></strong><code>[number, number, number] | null</code></p>
+<p>Minor axis of this ellipsoid.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>major_axis_endpoint?:</code></strong><code>([number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;) | null</code></p>
+<p>Major axis endpoint. If specified, overrides major axis to be major_axis_endpoint - center.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>minor_axis_endpoint?:</code></strong><code>([number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;) | null</code></p>
+<p>Minor axis endpoint. If specified, overrides minor axis to be minor_axis_endpoint - center.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>radius?:</code></strong><code>([number, number, number] | number) | null</code></p>
+<p>Radii of the ellipsoid along each axis.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>radius_extent?:</code></strong><code>([number, number, number] | number) | null</code></p>
+<p>Added to the radii of the ellipsoid along each axis.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>tooltip?:</code></strong><code>string | null</code></p>
+<p>Tooltip to show when hovering over the tube. If not specified, uses the parent primitives group <code>tooltip</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+</ul>
+<p><strong>Case <code>kind: "box"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>center:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p>The center of the box.</p>
+</li>
+<li>
+<p><strong><code>extent?:</code></strong><code>[number, number, number] | null</code></p>
+<p>The width, the height, and the depth of the box. Added to the bounding box determined by the center.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>show_faces?:</code></strong><code>boolean</code></p>
+<p>Determine whether to render the faces of the box.</p>
+<p>Default: <code>true</code></p>
+</li>
+<li>
+<p><strong><code>face_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p>Color of the box faces.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>show_edges?:</code></strong><code>boolean</code></p>
+<p>Determine whether to render the edges of the box.</p>
+<p>Default: <code>false</code></p>
+</li>
+<li>
+<p><strong><code>edge_radius?:</code></strong><code>number</code></p>
+<p>Radius of the box edges. In angstroms.</p>
+<p>Default: <code>0.1</code></p>
+</li>
+<li>
+<p><strong><code>edge_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p>Color of the edges.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>tooltip?:</code></strong><code>string | null</code></p>
+<p>Tooltip to show when hovering over the tube. If not specified, uses the parent primitives group <code>tooltip</code>.</p>
+<p>Default: <code>null</code></p>
+</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../selectors/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Selectors
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
