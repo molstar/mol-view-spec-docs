@@ -1,4 +1,4 @@
-# MolViewSpec extension in Mol\*
+# Mol\* MVS Extension
 
 Mol\* MolViewSpec extension provides functionality for building, validating, and visualizing MVS views.
 

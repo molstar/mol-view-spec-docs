@@ -38,7 +38,8 @@ nav:
   - Volumetric Data: 'volumes.md'
   - Animations: 'animations.md'
   - Mol* MVS Extension:
-    - Overview: 'mvs-molstar-extension.md'
-    - Integration Examples: 'mvs-molstar-extension-integration.md'
+    - Overview: 'mvs-molstar-extension/index.md'
+    - Integration Examples: 'mvs-molstar-extension/integration.md'
+    - Custom Load Extensions: 'mvs-molstar-extension/load-extensions.md'
   - Demos: 'demos.md'
 repo_url: https://github.com/molstar/mol-view-spec-docs

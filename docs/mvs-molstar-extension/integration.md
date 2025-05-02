@@ -1,4 +1,4 @@
-# MolViewSpec extension in Mol\* - Integration in web pages
+# Mol\* MVS Extension: Integration in web pages
 
 This page demonstrates several methods to integrate Mol\* Viewer in a web page and use MolViewSpec functionality.
 
