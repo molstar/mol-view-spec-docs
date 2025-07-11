@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
@@ -420,6 +420,15 @@
   <a href="#color_from_source" class="md-nav__link">
     <span class="md-ellipsis">
       color_from_source
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clip" class="md-nav__link">
+    <span class="md-ellipsis">
+      clip
     </span>
   </a>
   
@@ -971,6 +980,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#clip" class="md-nav__link">
+    <span class="md-ellipsis">
+      clip
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#opacity" class="md-nav__link">
     <span class="md-ellipsis">
       opacity
@@ -1195,7 +1213,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Parent: <code>structure</code></p>
 <p>Params:</p>
 <ul>
-<li><strong><code>selector:</code></strong><code>("all" | "polymer" | "protein" | "nucleic" | "branched" | "ligand" | "ion" | "water" | "coarse") | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt;</code></li>
+<li><strong><code>selector:</code></strong><code>("all" | "polymer" | "protein" | "nucleic" | "branched" | "ligand" | "ion" | "water" | "coarse") | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt;</code></li>
 </ul>
 <p>Defines what part of the parent structure should be included in this component.</p>
 <h2 id="component_from_uri"><code>component_from_uri</code></h2>
@@ -1235,6 +1253,11 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Name of the column in CIF or field name (key) in JSON that contains the component identifier.</p>
 <p>Default: <code>"component"</code></p>
 <ul>
+<li><strong><code>field_remapping?:</code></strong><code>{ [K in string]: (string | null) }</code></li>
+</ul>
+<p>Optional remapping of annotation field names <code>{ standardName1: actualName1, ... }</code>. Use <code>{ "label_asym_id": "X" }</code> to load actual field "X" as "label_asym_id". Use <code>{ "label_asym_id": null }</code> to ignore actual field "label_asym_id". Fields not mentioned here are mapped implicitely (i.e. actual name = standard name).</p>
+<p>Default: <code>{}</code></p>
+<ul>
 <li><strong><code>field_values?:</code></strong><code>Array&lt;string&gt; | null</code></li>
 </ul>
 <p>List of component identifiers (i.e. values in the field given by <code>field_name</code>) which should be included in this component. If <code>null</code>, component identifiers are ignored (all annotation rows are included), and <code>field_name</code> field can be dropped from the annotation.</p>
@@ -1267,6 +1290,11 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 </ul>
 <p>Name of the column in CIF or field name (key) in JSON that contains the component identifier.</p>
 <p>Default: <code>"component"</code></p>
+<ul>
+<li><strong><code>field_remapping?:</code></strong><code>{ [K in string]: (string | null) }</code></li>
+</ul>
+<p>Optional remapping of annotation field names <code>{ standardName1: actualName1, ... }</code>. Use <code>{ "label_asym_id": "X" }</code> to load actual field "X" as "label_asym_id". Use <code>{ "label_asym_id": null }</code> to ignore actual field "label_asym_id". Fields not mentioned here are mapped implicitely (i.e. actual name = standard name).</p>
+<p>Default: <code>{}</code></p>
 <ul>
 <li><strong><code>field_values?:</code></strong><code>Array&lt;string&gt; | null</code></li>
 </ul>
@@ -1392,7 +1420,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Color to apply to the representation. Can be either an X11 color name (e.g. <code>"red"</code>) or a hexadecimal code (e.g. <code>"#FF0011"</code>).</p>
 <p>Default: <code>"white"</code></p>
 <ul>
-<li><strong><code>selector?:</code></strong><code>("all" | "polymer" | "protein" | "nucleic" | "branched" | "ligand" | "ion" | "water" | "coarse") | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt;</code></li>
+<li><strong><code>selector?:</code></strong><code>("all" | "polymer" | "protein" | "nucleic" | "branched" | "ligand" | "ion" | "water" | "coarse") | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt;</code></li>
 </ul>
 <p>Defines to what part of the representation this color should be applied.</p>
 <p>Default: <code>"all"</code></p>
@@ -1432,6 +1460,16 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 </ul>
 <p>Name of the column in CIF or field name (key) in JSON that contains the color.</p>
 <p>Default: <code>"color"</code></p>
+<ul>
+<li><strong><code>field_remapping?:</code></strong><code>{ [K in string]: (string | null) }</code></li>
+</ul>
+<p>Optional remapping of annotation field names <code>{ standardName1: actualName1, ... }</code>. Use <code>{ "label_asym_id": "X" }</code> to load actual field "X" as "label_asym_id". Use <code>{ "label_asym_id": null }</code> to ignore actual field "label_asym_id". Fields not mentioned here are mapped implicitely (i.e. actual name = standard name).</p>
+<p>Default: <code>{}</code></p>
+<ul>
+<li><strong><code>palette?:</code></strong><code>{ kind: "categorical", colors?: (("Reds" | "Oranges" | "Greens" | "Blues" | "Purples" | "Greys" | "OrRd" | "BuGn" | "PuBuGn" | "GnBu" | "PuBu" | "BuPu" | "RdPu" | "PuRd" | "YlOrRd" | "YlOrBr" | "YlGn" | "YlGnBu" | "Magma" | "Inferno" | "Plasma" | "Viridis" | "Cividis" | "Turbo" | "Warm" | "Cool" | "CubehelixDefault" | "Rainbow" | "Sinebow" | "RdBu" | "RdGy" | "PiYG" | "BrBG" | "PRGn" | "PuOr" | "RdYlGn" | "RdYlBu" | "Spectral" | "Category10" | "Observable10" | "Tableau10" | "Set1" | "Set2" | "Set3" | "Pastel1" | "Pastel2" | "Dark2" | "Paired" | "Accent" | "Chainbow") | ("ElementSymbol" | "ResidueName" | "ResidueProperties" | "SecondaryStructure") | Array&lt;(ColorName | HexColor)&gt; | { [K in string]: (ColorName | HexColor) }), repeat_color_list?: boolean, sort?: ("none" | "lexical" | "numeric"), sort_direction?: ("ascending" | "descending"), case_insensitive?: boolean, missing_color?: (ColorName | HexColor | null) } | { kind: "discrete", colors?: (("Reds" | "Oranges" | "Greens" | "Blues" | "Purples" | "Greys" | "OrRd" | "BuGn" | "PuBuGn" | "GnBu" | "PuBu" | "BuPu" | "RdPu" | "PuRd" | "YlOrRd" | "YlOrBr" | "YlGn" | "YlGnBu" | "Magma" | "Inferno" | "Plasma" | "Viridis" | "Cividis" | "Turbo" | "Warm" | "Cool" | "CubehelixDefault" | "Rainbow" | "Sinebow" | "RdBu" | "RdGy" | "PiYG" | "BrBG" | "PRGn" | "PuOr" | "RdYlGn" | "RdYlBu" | "Spectral" | "Category10" | "Observable10" | "Tableau10" | "Set1" | "Set2" | "Set3" | "Pastel1" | "Pastel2" | "Dark2" | "Paired" | "Accent" | "Chainbow") | Array&lt;(ColorName | HexColor)&gt; | Array&lt;[(ColorName | HexColor), number]&gt; | Array&lt;[(ColorName | HexColor | null), (number | null), (number | null)]&gt;), reverse?: boolean, mode?: ("normalized" | "absolute"), value_domain?: [(number | null), (number | null)] } | { kind: "continuous", colors?: (("Reds" | "Oranges" | "Greens" | "Blues" | "Purples" | "Greys" | "OrRd" | "BuGn" | "PuBuGn" | "GnBu" | "PuBu" | "BuPu" | "RdPu" | "PuRd" | "YlOrRd" | "YlOrBr" | "YlGn" | "YlGnBu" | "Magma" | "Inferno" | "Plasma" | "Viridis" | "Cividis" | "Turbo" | "Warm" | "Cool" | "CubehelixDefault" | "Rainbow" | "Sinebow" | "RdBu" | "RdGy" | "PiYG" | "BrBG" | "PRGn" | "PuOr" | "RdYlGn" | "RdYlBu" | "Spectral" | "Category10" | "Observable10" | "Tableau10" | "Set1" | "Set2" | "Set3" | "Pastel1" | "Pastel2" | "Dark2" | "Paired" | "Accent" | "Chainbow") | Array&lt;(ColorName | HexColor)&gt; | Array&lt;[(ColorName | HexColor), number]&gt;), reverse?: boolean, mode?: ("normalized" | "absolute"), value_domain?: [(number | null), (number | null)], underflow_color?: ("auto" | ColorName | HexColor | null), overflow_color?: ("auto" | ColorName | HexColor | null) } | null</code></li>
+</ul>
+<p>Customize mapping of annotation values to colors.</p>
+<p>Default: <code>null</code></p>
 <h2 id="color_from_source"><code>color_from_source</code></h2>
 <p>This node instructs to apply colors to a visual representation. The colors are defined by an annotation resource included in the same file this structure was loaded from. Only applicable if the structure was loaded from an mmCIF or BinaryCIF file.</p>
 <p>Parent: <code>representation</code></p>
@@ -1460,6 +1498,110 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 </ul>
 <p>Name of the column in CIF or field name (key) in JSON that contains the color.</p>
 <p>Default: <code>"color"</code></p>
+<ul>
+<li><strong><code>field_remapping?:</code></strong><code>{ [K in string]: (string | null) }</code></li>
+</ul>
+<p>Optional remapping of annotation field names <code>{ standardName1: actualName1, ... }</code>. Use <code>{ "label_asym_id": "X" }</code> to load actual field "X" as "label_asym_id". Use <code>{ "label_asym_id": null }</code> to ignore actual field "label_asym_id". Fields not mentioned here are mapped implicitely (i.e. actual name = standard name).</p>
+<p>Default: <code>{}</code></p>
+<ul>
+<li><strong><code>palette?:</code></strong><code>{ kind: "categorical", colors?: (("Reds" | "Oranges" | "Greens" | "Blues" | "Purples" | "Greys" | "OrRd" | "BuGn" | "PuBuGn" | "GnBu" | "PuBu" | "BuPu" | "RdPu" | "PuRd" | "YlOrRd" | "YlOrBr" | "YlGn" | "YlGnBu" | "Magma" | "Inferno" | "Plasma" | "Viridis" | "Cividis" | "Turbo" | "Warm" | "Cool" | "CubehelixDefault" | "Rainbow" | "Sinebow" | "RdBu" | "RdGy" | "PiYG" | "BrBG" | "PRGn" | "PuOr" | "RdYlGn" | "RdYlBu" | "Spectral" | "Category10" | "Observable10" | "Tableau10" | "Set1" | "Set2" | "Set3" | "Pastel1" | "Pastel2" | "Dark2" | "Paired" | "Accent" | "Chainbow") | ("ElementSymbol" | "ResidueName" | "ResidueProperties" | "SecondaryStructure") | Array&lt;(ColorName | HexColor)&gt; | { [K in string]: (ColorName | HexColor) }), repeat_color_list?: boolean, sort?: ("none" | "lexical" | "numeric"), sort_direction?: ("ascending" | "descending"), case_insensitive?: boolean, missing_color?: (ColorName | HexColor | null) } | { kind: "discrete", colors?: (("Reds" | "Oranges" | "Greens" | "Blues" | "Purples" | "Greys" | "OrRd" | "BuGn" | "PuBuGn" | "GnBu" | "PuBu" | "BuPu" | "RdPu" | "PuRd" | "YlOrRd" | "YlOrBr" | "YlGn" | "YlGnBu" | "Magma" | "Inferno" | "Plasma" | "Viridis" | "Cividis" | "Turbo" | "Warm" | "Cool" | "CubehelixDefault" | "Rainbow" | "Sinebow" | "RdBu" | "RdGy" | "PiYG" | "BrBG" | "PRGn" | "PuOr" | "RdYlGn" | "RdYlBu" | "Spectral" | "Category10" | "Observable10" | "Tableau10" | "Set1" | "Set2" | "Set3" | "Pastel1" | "Pastel2" | "Dark2" | "Paired" | "Accent" | "Chainbow") | Array&lt;(ColorName | HexColor)&gt; | Array&lt;[(ColorName | HexColor), number]&gt; | Array&lt;[(ColorName | HexColor | null), (number | null), (number | null)]&gt;), reverse?: boolean, mode?: ("normalized" | "absolute"), value_domain?: [(number | null), (number | null)] } | { kind: "continuous", colors?: (("Reds" | "Oranges" | "Greens" | "Blues" | "Purples" | "Greys" | "OrRd" | "BuGn" | "PuBuGn" | "GnBu" | "PuBu" | "BuPu" | "RdPu" | "PuRd" | "YlOrRd" | "YlOrBr" | "YlGn" | "YlGnBu" | "Magma" | "Inferno" | "Plasma" | "Viridis" | "Cividis" | "Turbo" | "Warm" | "Cool" | "CubehelixDefault" | "Rainbow" | "Sinebow" | "RdBu" | "RdGy" | "PiYG" | "BrBG" | "PRGn" | "PuOr" | "RdYlGn" | "RdYlBu" | "Spectral" | "Category10" | "Observable10" | "Tableau10" | "Set1" | "Set2" | "Set3" | "Pastel1" | "Pastel2" | "Dark2" | "Paired" | "Accent" | "Chainbow") | Array&lt;(ColorName | HexColor)&gt; | Array&lt;[(ColorName | HexColor), number]&gt;), reverse?: boolean, mode?: ("normalized" | "absolute"), value_domain?: [(number | null), (number | null)], underflow_color?: ("auto" | ColorName | HexColor | null), overflow_color?: ("auto" | ColorName | HexColor | null) } | null</code></li>
+</ul>
+<p>Customize mapping of annotation values to colors.</p>
+<p>Default: <code>null</code></p>
+<h2 id="clip"><code>clip</code></h2>
+<p>This node instructs to apply clipping to a visual representation.</p>
+<p>Parent: <code>representation</code> or <code>volume_representation</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>type:</code></strong><code>plane | sphere | box</code></li>
+</ul>
+<p>Clip type</p>
+<p>[This parameter determines the rest of parameters]</p>
+<p><strong>Case <code>type: "plane"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>check_transform?:</code></strong><code>Array&lt;number&gt; | null</code></p>
+<p>Transformation matrix to applied to each point before clipping. For example, can be used to clip volumes in the grid/fractional space. Default is null.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>invert?:</code></strong><code>boolean</code></p>
+<p>Inverts the clipping region. Default is false</p>
+<p>Default: <code>false</code></p>
+</li>
+<li>
+<p><strong><code>variant?:</code></strong><code>"object" | "pixel"</code></p>
+<p>Variant of the clip node, either "object" or "pixel"</p>
+<p>Default: <code>"pixel"</code></p>
+</li>
+<li>
+<p><strong><code>normal:</code></strong><code>[number, number, number]</code></p>
+<p>Normal vector of the clipping plane.</p>
+</li>
+<li>
+<p><strong><code>point:</code></strong><code>[number, number, number]</code></p>
+<p>Point on the clipping plane.</p>
+</li>
+</ul>
+<p><strong>Case <code>type: "sphere"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>check_transform?:</code></strong><code>Array&lt;number&gt; | null</code></p>
+<p>Transformation matrix to applied to each point before clipping. For example, can be used to clip volumes in the grid/fractional space. Default is null.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>invert?:</code></strong><code>boolean</code></p>
+<p>Inverts the clipping region. Default is false</p>
+<p>Default: <code>false</code></p>
+</li>
+<li>
+<p><strong><code>variant?:</code></strong><code>"object" | "pixel"</code></p>
+<p>Variant of the clip node, either "object" or "pixel"</p>
+<p>Default: <code>"pixel"</code></p>
+</li>
+<li>
+<p><strong><code>center:</code></strong><code>[number, number, number]</code></p>
+<p>Center of the clipping sphere.</p>
+</li>
+<li>
+<p><strong><code>radius?:</code></strong><code>number</code></p>
+<p>Radius of the clipping sphere.</p>
+<p>Default: <code>1</code></p>
+</li>
+</ul>
+<p><strong>Case <code>type: "box"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>check_transform?:</code></strong><code>Array&lt;number&gt; | null</code></p>
+<p>Transformation matrix to applied to each point before clipping. For example, can be used to clip volumes in the grid/fractional space. Default is null.</p>
+<p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>invert?:</code></strong><code>boolean</code></p>
+<p>Inverts the clipping region. Default is false</p>
+<p>Default: <code>false</code></p>
+</li>
+<li>
+<p><strong><code>variant?:</code></strong><code>"object" | "pixel"</code></p>
+<p>Variant of the clip node, either "object" or "pixel"</p>
+<p>Default: <code>"pixel"</code></p>
+</li>
+<li>
+<p><strong><code>center:</code></strong><code>[number, number, number]</code></p>
+<p>Center of the clipping box.</p>
+</li>
+<li>
+<p><strong><code>size?:</code></strong><code>[number, number, number]</code></p>
+<p>Size of the clipping box.</p>
+<p>Default: <code>[1, 1, 1]</code></p>
+</li>
+<li>
+<p><strong><code>rotation?:</code></strong><code>Array&lt;number&gt;</code></p>
+<p>Rotation matrix (3x3 matrix flattened in column major format (j*3+i indexing), this is equivalent to Fortran-order in numpy). This matrix will multiply the structure coordinates from the left. The default value is the identity matrix (corresponds to no rotation).</p>
+<p>Default: <code>[1, 0, 0, 0, 1, 0, 0, 0, 1]</code></p>
+</li>
+</ul>
 <h2 id="opacity"><code>opacity</code></h2>
 <p>This node instructs to apply opacity/transparency to a visual representation.</p>
 <p>Parent: <code>representation</code> or <code>volume_representation</code></p>
@@ -1512,6 +1654,11 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 </ul>
 <p>Name of the column in CIF or field name (key) in JSON that contains the label text.</p>
 <p>Default: <code>"label"</code></p>
+<ul>
+<li><strong><code>field_remapping?:</code></strong><code>{ [K in string]: (string | null) }</code></li>
+</ul>
+<p>Optional remapping of annotation field names <code>{ standardName1: actualName1, ... }</code>. Use <code>{ "label_asym_id": "X" }</code> to load actual field "X" as "label_asym_id". Use <code>{ "label_asym_id": null }</code> to ignore actual field "label_asym_id". Fields not mentioned here are mapped implicitely (i.e. actual name = standard name).</p>
+<p>Default: <code>{}</code></p>
 <h2 id="label_from_source"><code>label_from_source</code></h2>
 <p>This node instructs to add labels (textual visual representations) to parts of a structure. The labels are defined by an annotation resource included in the same file this structure was loaded from. Only applicable if the structure was loaded from an mmCIF or BinaryCIF file.</p>
 <p>Parent: <code>structure</code></p>
@@ -1540,6 +1687,11 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 </ul>
 <p>Name of the column in CIF or field name (key) in JSON that contains the label text.</p>
 <p>Default: <code>"label"</code></p>
+<ul>
+<li><strong><code>field_remapping?:</code></strong><code>{ [K in string]: (string | null) }</code></li>
+</ul>
+<p>Optional remapping of annotation field names <code>{ standardName1: actualName1, ... }</code>. Use <code>{ "label_asym_id": "X" }</code> to load actual field "X" as "label_asym_id". Use <code>{ "label_asym_id": null }</code> to ignore actual field "label_asym_id". Fields not mentioned here are mapped implicitely (i.e. actual name = standard name).</p>
+<p>Default: <code>{}</code></p>
 <h2 id="tooltip"><code>tooltip</code></h2>
 <p>This node instructs to add a tooltip to a component. "Tooltip" is a text which is not a part of the visualization but should be presented to the users when they interact with the component (typically, the tooltip will be shown somewhere on the screen when the user hovers over a visual representation of the component).</p>
 <p>Parent: <code>component</code> or <code>component_from_uri</code> or <code>component_from_source</code></p>
@@ -1584,6 +1736,11 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 </ul>
 <p>Name of the column in CIF or field name (key) in JSON that contains the tooltip text.</p>
 <p>Default: <code>"tooltip"</code></p>
+<ul>
+<li><strong><code>field_remapping?:</code></strong><code>{ [K in string]: (string | null) }</code></li>
+</ul>
+<p>Optional remapping of annotation field names <code>{ standardName1: actualName1, ... }</code>. Use <code>{ "label_asym_id": "X" }</code> to load actual field "X" as "label_asym_id". Use <code>{ "label_asym_id": null }</code> to ignore actual field "label_asym_id". Fields not mentioned here are mapped implicitely (i.e. actual name = standard name).</p>
+<p>Default: <code>{}</code></p>
 <h2 id="tooltip_from_source"><code>tooltip_from_source</code></h2>
 <p>This node instructs to add tooltips to parts of a structure. The tooltips are defined by an annotation resource included in the same file this structure was loaded from. Only applicable if the structure was loaded from an mmCIF or BinaryCIF file.</p>
 <p>Parent: <code>structure</code></p>
@@ -1612,6 +1769,11 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 </ul>
 <p>Name of the column in CIF or field name (key) in JSON that contains the tooltip text.</p>
 <p>Default: <code>"tooltip"</code></p>
+<ul>
+<li><strong><code>field_remapping?:</code></strong><code>{ [K in string]: (string | null) }</code></li>
+</ul>
+<p>Optional remapping of annotation field names <code>{ standardName1: actualName1, ... }</code>. Use <code>{ "label_asym_id": "X" }</code> to load actual field "X" as "label_asym_id". Use <code>{ "label_asym_id": null }</code> to ignore actual field "label_asym_id". Fields not mentioned here are mapped implicitely (i.e. actual name = standard name).</p>
+<p>Default: <code>{}</code></p>
 <h2 id="focus"><code>focus</code></h2>
 <p>This node instructs to set the camera focus to a component (zoom in).</p>
 <p>Parent: <code>root</code> or <code>component</code> or <code>component_from_uri</code> or <code>component_from_source</code> or <code>primitives</code> or <code>primitives_from_uri</code> or <code>volume</code> or <code>volume_representation</code></p>
@@ -1752,7 +1914,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>{}</code></p>
 </li>
 <li>
-<p><strong><code>color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p><strong><code>color?:</code></strong><code>ColorName | HexColor | null</code></p>
 <p>Color of the triangles and wireframe. Can be overwritten by <code>group_colors</code>. If not specified, uses the parent primitives group <code>color</code>.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -1777,7 +1939,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>1</code></p>
 </li>
 <li>
-<p><strong><code>wireframe_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p><strong><code>wireframe_color?:</code></strong><code>ColorName | HexColor | null</code></p>
 <p>Wireframe color. If not specified, uses <code>group_colors</code>.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -1813,7 +1975,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>{}</code></p>
 </li>
 <li>
-<p><strong><code>color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p><strong><code>color?:</code></strong><code>ColorName | HexColor | null</code></p>
 <p>Color of the lines. Can be overwritten by <code>group_colors</code>. If not specified, uses the parent primitives group <code>color</code>.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -1831,11 +1993,11 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p><strong>Case <code>kind: "tube"</code>:</strong></p>
 <ul>
 <li>
-<p><strong><code>start:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p><strong><code>start:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; }</code></p>
 <p>Start point of the tube.</p>
 </li>
 <li>
-<p><strong><code>end:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p><strong><code>end:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; }</code></p>
 <p>End point of the tube.</p>
 </li>
 <li>
@@ -1849,7 +2011,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>null</code></p>
 </li>
 <li>
-<p><strong><code>color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p><strong><code>color?:</code></strong><code>ColorName | HexColor | null</code></p>
 <p>Color of the tube. If not specified, uses the parent primitives group <code>color</code>.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -1862,11 +2024,11 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p><strong>Case <code>kind: "arrow"</code>:</strong></p>
 <ul>
 <li>
-<p><strong><code>start:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p><strong><code>start:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; }</code></p>
 <p>Start point of the arrow.</p>
 </li>
 <li>
-<p><strong><code>end?:</code></strong><code>([number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;) | null</code></p>
+<p><strong><code>end?:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; } | null</code></p>
 <p>End point of the arrow.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -1886,14 +2048,14 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>false</code></p>
 </li>
 <li>
-<p><strong><code>start_cap_length?:</code></strong><code>number</code></p>
-<p>Length of the start cap.</p>
-<p>Default: <code>0.1</code></p>
+<p><strong><code>start_cap_length?:</code></strong><code>number | null</code></p>
+<p>Length of the start cap. If not provided, will be 2 * start_cap_radius.</p>
+<p>Default: <code>null</code></p>
 </li>
 <li>
-<p><strong><code>start_cap_radius?:</code></strong><code>number</code></p>
-<p>Radius of the start cap.</p>
-<p>Default: <code>0.1</code></p>
+<p><strong><code>start_cap_radius?:</code></strong><code>number | null</code></p>
+<p>Radius of the start cap. If not provided, will be 2 * tube_radius.</p>
+<p>Default: <code>null</code></p>
 </li>
 <li>
 <p><strong><code>show_end_cap?:</code></strong><code>boolean</code></p>
@@ -1901,14 +2063,14 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>false</code></p>
 </li>
 <li>
-<p><strong><code>end_cap_length?:</code></strong><code>number</code></p>
-<p>Length of the end cap.</p>
-<p>Default: <code>0.1</code></p>
+<p><strong><code>end_cap_length?:</code></strong><code>number | null</code></p>
+<p>Length of the end cap. If not provided, will be 2 * end_cap_radius.</p>
+<p>Default: <code>null</code></p>
 </li>
 <li>
-<p><strong><code>end_cap_radius?:</code></strong><code>number</code></p>
-<p>Radius of the end cap.</p>
-<p>Default: <code>0.1</code></p>
+<p><strong><code>end_cap_radius?:</code></strong><code>number | null</code></p>
+<p>Radius of the end cap. If not provided, will be 2 * tube_radius.</p>
+<p>Default: <code>null</code></p>
 </li>
 <li>
 <p><strong><code>show_tube?:</code></strong><code>boolean</code></p>
@@ -1926,7 +2088,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>null</code></p>
 </li>
 <li>
-<p><strong><code>color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p><strong><code>color?:</code></strong><code>ColorName | HexColor | null</code></p>
 <p>Color of the tube. If not specified, uses the parent primitives group <code>color</code>.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -1939,11 +2101,11 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p><strong>Case <code>kind: "distance_measurement"</code>:</strong></p>
 <ul>
 <li>
-<p><strong><code>start:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p><strong><code>start:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; }</code></p>
 <p>Start point of the tube.</p>
 </li>
 <li>
-<p><strong><code>end:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p><strong><code>end:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; }</code></p>
 <p>End point of the tube.</p>
 </li>
 <li>
@@ -1957,7 +2119,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>null</code></p>
 </li>
 <li>
-<p><strong><code>color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p><strong><code>color?:</code></strong><code>ColorName | HexColor | null</code></p>
 <p>Color of the tube. If not specified, uses the parent primitives group <code>color</code>.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -1982,7 +2144,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>0</code></p>
 </li>
 <li>
-<p><strong><code>label_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p><strong><code>label_color?:</code></strong><code>ColorName | HexColor | null</code></p>
 <p>Color of the label. If not specified, uses the parent primitives group <code>label_color</code>.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -1990,15 +2152,15 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p><strong>Case <code>kind: "angle_measurement"</code>:</strong></p>
 <ul>
 <li>
-<p><strong><code>a:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p><strong><code>a:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; }</code></p>
 <p>Point A.</p>
 </li>
 <li>
-<p><strong><code>b:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p><strong><code>b:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; }</code></p>
 <p>Point B.</p>
 </li>
 <li>
-<p><strong><code>c:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p><strong><code>c:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; }</code></p>
 <p>Point C.</p>
 </li>
 <li>
@@ -2022,7 +2184,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>0</code></p>
 </li>
 <li>
-<p><strong><code>label_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p><strong><code>label_color?:</code></strong><code>ColorName | HexColor | null</code></p>
 <p>Color of the label. If not specified, uses the parent primitives group <code>label_color</code>.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -2032,9 +2194,14 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>true</code></p>
 </li>
 <li>
-<p><strong><code>vector_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p><strong><code>vector_color?:</code></strong><code>ColorName | HexColor | null</code></p>
 <p>Color of the vectors.</p>
 <p>Default: <code>null</code></p>
+</li>
+<li>
+<p><strong><code>vector_radius?:</code></strong><code>number</code></p>
+<p>Radius of the vectors.</p>
+<p>Default: <code>0.05</code></p>
 </li>
 <li>
 <p><strong><code>show_section?:</code></strong><code>boolean</code></p>
@@ -2042,7 +2209,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>true</code></p>
 </li>
 <li>
-<p><strong><code>section_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p><strong><code>section_color?:</code></strong><code>ColorName | HexColor | null</code></p>
 <p>Color of the angle section. If not specified, the primitives group color is used.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -2060,7 +2227,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p><strong>Case <code>kind: "label"</code>:</strong></p>
 <ul>
 <li>
-<p><strong><code>position:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p><strong><code>position:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; }</code></p>
 <p>Position of this label.</p>
 </li>
 <li>
@@ -2073,7 +2240,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>1</code></p>
 </li>
 <li>
-<p><strong><code>label_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p><strong><code>label_color?:</code></strong><code>ColorName | HexColor | null</code></p>
 <p>Color of the label. If not specified, uses the parent primitives group <code>label_color</code>.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -2086,7 +2253,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p><strong>Case <code>kind: "ellipse"</code>:</strong></p>
 <ul>
 <li>
-<p><strong><code>color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p><strong><code>color?:</code></strong><code>ColorName | HexColor | null</code></p>
 <p>Color of the ellipse. If not specified, uses the parent primitives group <code>color</code>.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -2096,7 +2263,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>false</code></p>
 </li>
 <li>
-<p><strong><code>center:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p><strong><code>center:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; }</code></p>
 <p>The center of the ellipse.</p>
 </li>
 <li>
@@ -2110,12 +2277,12 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>null</code></p>
 </li>
 <li>
-<p><strong><code>major_axis_endpoint?:</code></strong><code>([number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;) | null</code></p>
+<p><strong><code>major_axis_endpoint?:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; } | null</code></p>
 <p>Major axis endpoint. If specified, overrides major axis to be major_axis_endpoint - center.</p>
 <p>Default: <code>null</code></p>
 </li>
 <li>
-<p><strong><code>minor_axis_endpoint?:</code></strong><code>([number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;) | null</code></p>
+<p><strong><code>minor_axis_endpoint?:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; } | null</code></p>
 <p>Minor axis endpoint. If specified, overrides minor axis to be minor_axis_endpoint - center.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -2148,12 +2315,12 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p><strong>Case <code>kind: "ellipsoid"</code>:</strong></p>
 <ul>
 <li>
-<p><strong><code>color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p><strong><code>color?:</code></strong><code>ColorName | HexColor | null</code></p>
 <p>Color of the ellipsoid. If not specified, uses the parent primitives group <code>color</code>.</p>
 <p>Default: <code>null</code></p>
 </li>
 <li>
-<p><strong><code>center:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p><strong><code>center:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; }</code></p>
 <p>The center of the ellipsoid.</p>
 </li>
 <li>
@@ -2167,22 +2334,22 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>null</code></p>
 </li>
 <li>
-<p><strong><code>major_axis_endpoint?:</code></strong><code>([number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;) | null</code></p>
+<p><strong><code>major_axis_endpoint?:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; } | null</code></p>
 <p>Major axis endpoint. If specified, overrides major axis to be major_axis_endpoint - center.</p>
 <p>Default: <code>null</code></p>
 </li>
 <li>
-<p><strong><code>minor_axis_endpoint?:</code></strong><code>([number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;) | null</code></p>
+<p><strong><code>minor_axis_endpoint?:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; } | null</code></p>
 <p>Minor axis endpoint. If specified, overrides minor axis to be minor_axis_endpoint - center.</p>
 <p>Default: <code>null</code></p>
 </li>
 <li>
-<p><strong><code>radius?:</code></strong><code>([number, number, number] | number) | null</code></p>
+<p><strong><code>radius?:</code></strong><code>[number, number, number] | number | null</code></p>
 <p>Radii of the ellipsoid along each axis.</p>
 <p>Default: <code>null</code></p>
 </li>
 <li>
-<p><strong><code>radius_extent?:</code></strong><code>([number, number, number] | number) | null</code></p>
+<p><strong><code>radius_extent?:</code></strong><code>[number, number, number] | number | null</code></p>
 <p>Added to the radii of the ellipsoid along each axis.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -2195,7 +2362,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p><strong>Case <code>kind: "box"</code>:</strong></p>
 <ul>
 <li>
-<p><strong><code>center:</code></strong><code>[number, number, number] | Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt; | Array&lt;Partial&lt;{ structure_ref: string, expression_schema: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions: Array&lt;Partial&lt;{ label_entity_id: string, label_asym_id: string, auth_asym_id: string, label_seq_id: Integer, auth_seq_id: Integer, pdbx_PDB_ins_code: string, beg_label_seq_id: Integer, end_label_seq_id: Integer, beg_auth_seq_id: Integer, end_auth_seq_id: Integer, label_atom_id: string, auth_atom_id: string, type_symbol: string, atom_id: Integer, atom_index: Integer }&gt;&gt; }&gt;&gt;</code></p>
+<p><strong><code>center:</code></strong><code>[number, number, number] | { label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string } | { structure_ref?: string, expression_schema?: ("whole_structure" | "entity" | "chain" | "auth_chain" | "residue" | "auth_residue" | "residue_range" | "auth_residue_range" | "atom" | "auth_atom" | "all_atomic"), expressions?: Array&lt;{ label_entity_id?: string, label_asym_id?: string, auth_asym_id?: string, label_seq_id?: Integer, auth_seq_id?: Integer, pdbx_PDB_ins_code?: string, beg_label_seq_id?: Integer, end_label_seq_id?: Integer, beg_auth_seq_id?: Integer, end_auth_seq_id?: Integer, label_comp_id?: string, auth_comp_id?: string, label_atom_id?: string, auth_atom_id?: string, type_symbol?: string, atom_id?: Integer, atom_index?: Integer, instance_id?: string }&gt; }</code></p>
 <p>The center of the box.</p>
 </li>
 <li>
@@ -2209,7 +2376,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>true</code></p>
 </li>
 <li>
-<p><strong><code>face_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p><strong><code>face_color?:</code></strong><code>ColorName | HexColor | null</code></p>
 <p>Color of the box faces.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -2224,7 +2391,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>0.1</code></p>
 </li>
 <li>
-<p><strong><code>edge_color?:</code></strong><code>(ColorName | HexColor) | null</code></p>
+<p><strong><code>edge_color?:</code></strong><code>ColorName | HexColor | null</code></p>
 <p>Color of the edges.</p>
 <p>Default: <code>null</code></p>
 </li>
@@ -2285,9 +2452,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
       <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

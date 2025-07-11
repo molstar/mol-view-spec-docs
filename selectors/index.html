@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
@@ -281,6 +281,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Selectors
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -292,6 +305,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instance_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      instance_id
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="instance_id">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crystals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crystals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assemblies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assemblies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ref" class="md-nav__link">
+    <span class="md-ellipsis">
+      ref
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -563,6 +637,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instance_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      instance_id
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="instance_id">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crystals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crystals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assemblies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assemblies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ref" class="md-nav__link">
+    <span class="md-ellipsis">
+      ref
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -606,6 +730,7 @@
 <span class="w">    </span><span class="nx">type_symbol?</span><span class="o">:</span><span class="w"> </span><span class="kt">str</span><span class="p">,</span><span class="w">        </span><span class="c1">// Element symbol like &#39;H&#39;, &#39;HE&#39;, &#39;LI&#39;, &#39;BE&#39;</span>
 <span class="w">    </span><span class="nx">atom_id?</span><span class="o">:</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w">            </span><span class="c1">// Unique atom identifier (_atom_site.id)</span>
 <span class="w">    </span><span class="nx">atom_index?</span><span class="o">:</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w">         </span><span class="c1">// 0-based index of the atom in the source data</span>
+<span class="w">    </span><span class="nx">instance_id?</span><span class="o">:</span><span class="w"> </span><span class="kt">str</span><span class="w">         </span><span class="c1">// Instance identifier to distinguish instances of the same chain created by applying different symmetry operators, like &#39;ASM-X0-1&#39; for assemblies or &#39;1_555&#39; for crystals</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>A component expression can include any combination of the fields. An expression with multiple fields selects atoms that fulfill all fields at the same time. Examples:</p>
@@ -629,6 +754,28 @@
 </code></pre></div>
 </li>
 </ul>
+<h3 id="instance_id"><code>instance_id</code></h3>
+<p>The <code>instance_id</code> field in component expressions does not refer to any column in mmCIF <code>atom_site</code> category, but can be used distinguish instances of the same chain created by applying different symmetry operators. Instance IDs follow these rules:</p>
+<h4 id="crystals">Crystals</h4>
+<p>Instances created by crystal (spacegroup) symmetry use IDs in the form <code>n_klm</code>, in accordance with the <a href="https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_v50.dic/Items/_struct_conn.ptnr1_symmetry.html">mmCIF dictionary recommendation</a>. However, to avoid any ambiguities, any translation index (<code>k</code>, <code>l</code>, <code>m</code>) smaller than 0 or greater than 9 is always enclosed in parenthesis. Indices 0–9 never use parentheses.</p>
+<ul>
+<li>e.g. <code>1_555</code>, <code>2_454</code></li>
+<li>e.g. <code>1_(11)15</code>, <code>1_1(11)5</code>, <code>1_11(15)</code> (instead of ambiguous <code>1_1115</code>)</li>
+<li>e.g. <code>1_(-1)1(-1)</code></li>
+</ul>
+<h4 id="assemblies">Assemblies</h4>
+<p>Instances in assemblies use IDs inspired by the <a href="https://www.wwpdb.org/news/news?year=2022#62559153c8eabd0c4864f208">wwPDB recommendation for naming chains in assemblies</a>. Instance IDs are based on data from <a href="https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_v50.dic/Categories/pdbx_struct_assembly_gen.html">pdbx_struct_assembly_gen</a> and <a href="https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_v50.dic/Categories/pdbx_struct_oper_list.html">pdbx_struct_oper_list</a> categories in mmCIF dictionary.</p>
+<p>Where only one operator is applied to create the instance, the instance ID is <code>ASM-</code> plus the operator identifier (<a href="https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_v50.dic/Items/_pdbx_struct_oper_list.id.html">pdbx_struct_oper_list.id</a>).</p>
+<ul>
+<li>e.g. <code>ASM-1</code>, <code>ASM-2</code>, <code>ASM-3</code>, <code>ASM-4</code> from generator expression <code>1,2,3,4</code></li>
+<li>e.g. <code>ASM-1</code>, <code>ASM-2</code>, <code>ASM-3</code>, <code>ASM-4</code>, <code>ASM-5</code> from generator expression <code>(1-5)</code></li>
+</ul>
+<p>Where multiple operators are applied to create the instance, the instance ID is <code>ASM-</code> plus a dash-separated list of operator identifiers. The order of the operators is the same as in the <a href="https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_v50.dic/Items/_pdbx_struct_assembly_gen.oper_expression.html">generator expression</a> (i.e. rightmost operator is applied first).</p>
+<ul>
+<li>e.g. <code>ASM-X0-1</code>, <code>ASM-X0-2</code>... <code>ASM-X0-20</code> from generator expression <code>(X0)(1-20)</code></li>
+<li>e.g. <code>ASM-1-61</code>, <code>ASM-1-62</code>... <code>ASM-2-61</code>, <code>ASM-2-62</code>... <code>ASM-60-88</code> from generator expression <code>(1-60)(61-88)</code></li>
+</ul>
+<h3 id="ref"><code>ref</code></h3>
 <p>Component expressions can be applied to primitives as well. Furthermore, a <code>ref</code> can be provided to make selections with
 a specific node when working e.g. with multiple structures.
 Any MVS node allows you to set an anchor:</p>
@@ -689,9 +836,7 @@ Any MVS node allows you to set an anchor:</p>
       <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
