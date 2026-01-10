@@ -1998,6 +1998,16 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 </ul>
 <p>Optional remapping of annotation field names <code>{ standardName1: actualName1, ... }</code>. Use <code>{ "label_asym_id": "X" }</code> to load actual field "X" as "label_asym_id". Use <code>{ "label_asym_id": null }</code> to ignore actual field "label_asym_id". Fields not mentioned here are mapped implicitely (i.e. actual name = standard name).</p>
 <p>Default: <code>{}</code></p>
+<ul>
+<li><strong><code>text_format?:</code></strong><code>string</code></li>
+</ul>
+<p>Formatting template for the label text. Supports simplified f-string syntax.</p>
+<p>Default: <code>"{}"</code></p>
+<ul>
+<li><strong><code>group_by_fields?:</code></strong><code>Array&lt;string&gt; | null</code></li>
+</ul>
+<p>Set of annotation fields for grouping annotation rows into label instances (i.e. annotation rows with the same values in all group-by fields will yield one label instance). Annotation row with undefined value in any group-by field is considered a separate label instance.</p>
+<p>Default: <code>null</code></p>
 <h2 id="label_from_source"><code>label_from_source</code></h2>
 <p>This node instructs to add labels (textual visual representations) to parts of a structure. The labels are defined by an annotation resource included in the same file this structure was loaded from. Only applicable if the structure was loaded from an mmCIF or BinaryCIF file.</p>
 <p>Parent: <code>structure</code></p>
@@ -2031,6 +2041,16 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 </ul>
 <p>Optional remapping of annotation field names <code>{ standardName1: actualName1, ... }</code>. Use <code>{ "label_asym_id": "X" }</code> to load actual field "X" as "label_asym_id". Use <code>{ "label_asym_id": null }</code> to ignore actual field "label_asym_id". Fields not mentioned here are mapped implicitely (i.e. actual name = standard name).</p>
 <p>Default: <code>{}</code></p>
+<ul>
+<li><strong><code>text_format?:</code></strong><code>string</code></li>
+</ul>
+<p>Formatting template for the label text. Supports simplified f-string syntax.</p>
+<p>Default: <code>"{}"</code></p>
+<ul>
+<li><strong><code>group_by_fields?:</code></strong><code>Array&lt;string&gt; | null</code></li>
+</ul>
+<p>Set of annotation fields for grouping annotation rows into label instances (i.e. annotation rows with the same values in all group-by fields will yield one label instance). Annotation row with undefined value in any group-by field is considered a separate label instance.</p>
+<p>Default: <code>null</code></p>
 <h2 id="tooltip"><code>tooltip</code></h2>
 <p>This node instructs to add a tooltip to a component. "Tooltip" is a text which is not a part of the visualization but should be presented to the users when they interact with the component (typically, the tooltip will be shown somewhere on the screen when the user hovers over a visual representation of the component).</p>
 <p>Parent: <code>component</code> or <code>component_from_uri</code> or <code>component_from_source</code></p>
@@ -2080,6 +2100,11 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 </ul>
 <p>Optional remapping of annotation field names <code>{ standardName1: actualName1, ... }</code>. Use <code>{ "label_asym_id": "X" }</code> to load actual field "X" as "label_asym_id". Use <code>{ "label_asym_id": null }</code> to ignore actual field "label_asym_id". Fields not mentioned here are mapped implicitely (i.e. actual name = standard name).</p>
 <p>Default: <code>{}</code></p>
+<ul>
+<li><strong><code>text_format?:</code></strong><code>string</code></li>
+</ul>
+<p>Formatting template for the tooltip text. Supports simplified f-string syntax.</p>
+<p>Default: <code>"{}"</code></p>
 <h2 id="tooltip_from_source"><code>tooltip_from_source</code></h2>
 <p>This node instructs to add tooltips to parts of a structure. The tooltips are defined by an annotation resource included in the same file this structure was loaded from. Only applicable if the structure was loaded from an mmCIF or BinaryCIF file.</p>
 <p>Parent: <code>structure</code></p>
@@ -2113,6 +2138,11 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 </ul>
 <p>Optional remapping of annotation field names <code>{ standardName1: actualName1, ... }</code>. Use <code>{ "label_asym_id": "X" }</code> to load actual field "X" as "label_asym_id". Use <code>{ "label_asym_id": null }</code> to ignore actual field "label_asym_id". Fields not mentioned here are mapped implicitely (i.e. actual name = standard name).</p>
 <p>Default: <code>{}</code></p>
+<ul>
+<li><strong><code>text_format?:</code></strong><code>string</code></li>
+</ul>
+<p>Formatting template for the tooltip text. Supports simplified f-string syntax.</p>
+<p>Default: <code>"{}"</code></p>
 <h2 id="focus"><code>focus</code></h2>
 <p>This node instructs to set the camera focus to a component (zoom in).</p>
 <p>Parent: <code>root</code> or <code>component</code> or <code>component_from_uri</code> or <code>component_from_source</code> or <code>primitives</code> or <code>primitives_from_uri</code> or <code>volume</code> or <code>volume_representation</code></p>
