@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -1581,7 +1581,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Parent: <code>component</code> or <code>component_from_uri</code> or <code>component_from_source</code></p>
 <p>Params:</p>
 <ul>
-<li><strong><code>type:</code></strong><code>cartoon | backbone | ball_and_stick | line | spacefill | carbohydrate | surface</code></li>
+<li><strong><code>type:</code></strong><code>cartoon | backbone | ball_and_stick | line | spacefill | carbohydrate | surface | putty</code></li>
 </ul>
 <p>Representation type</p>
 <p>[This parameter determines the rest of parameters]</p>
@@ -1651,6 +1651,21 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p><strong><code>size_factor?:</code></strong><code>number</code></p>
 <p>Scales the corresponding visuals.</p>
 <p>Default: <code>1</code></p>
+</li>
+</ul>
+<p><strong>Case <code>type: "putty"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>size_factor?:</code></strong><code>number</code></p>
+<p>Scales the corresponding visuals.</p>
+<p>Default: <code>1</code></p>
+</li>
+<li>
+<p><strong><code>size_theme?:</code></strong><code>"uniform" | "uncertainty"</code></p>
+<p>Controls how the tube radius is determined.
+<code>"uniform"</code> uses a constant radius scaled by <code>size_factor</code>.
+<code>"uncertainty"</code> drives the radius from per-residue B-factor/RMSF values.</p>
+<p>Default: <code>"uniform"</code></p>
 </li>
 </ul>
 <p><strong>Case <code>type: "surface"</code>:</strong></p>
