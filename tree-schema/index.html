@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
       
 
@@ -592,28 +592,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#camera" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        camera
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#canvas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        canvas
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#primitives" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -640,6 +618,39 @@
     <span class="md-ellipsis">
       
         primitive
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        camera
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        canvas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        transition
       
     </span>
   </a>
@@ -1283,28 +1294,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#camera" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        camera
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#canvas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        canvas
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#primitives" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1331,6 +1320,39 @@
     <span class="md-ellipsis">
       
         primitive
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        camera
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        canvas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        transition
       
     </span>
   </a>
@@ -1653,21 +1675,6 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>1</code></p>
 </li>
 </ul>
-<p><strong>Case <code>type: "putty"</code>:</strong></p>
-<ul>
-<li>
-<p><strong><code>size_factor?:</code></strong><code>number</code></p>
-<p>Scales the corresponding visuals.</p>
-<p>Default: <code>1</code></p>
-</li>
-<li>
-<p><strong><code>size_theme?:</code></strong><code>"uniform" | "uncertainty"</code></p>
-<p>Controls how the tube radius is determined.
-<code>"uniform"</code> uses a constant radius scaled by <code>size_factor</code>.
-<code>"uncertainty"</code> drives the radius from per-residue B-factor/RMSF values.</p>
-<p>Default: <code>"uniform"</code></p>
-</li>
-</ul>
 <p><strong>Case <code>type: "surface"</code>:</strong></p>
 <ul>
 <li>
@@ -1684,6 +1691,19 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p><strong><code>ignore_hydrogens?:</code></strong><code>boolean</code></p>
 <p>Controls whether hydrogen atoms are drawn.</p>
 <p>Default: <code>false</code></p>
+</li>
+</ul>
+<p><strong>Case <code>type: "putty"</code>:</strong></p>
+<ul>
+<li>
+<p><strong><code>size_factor?:</code></strong><code>number</code></p>
+<p>Scales the corresponding visuals.</p>
+<p>Default: <code>1</code></p>
+</li>
+<li>
+<p><strong><code>size_theme?:</code></strong><code>"uniform" | "uncertainty"</code></p>
+<p>Controls how the tube radius is determined. 'uniform' uses a constant radius scaled by size_factor. 'uncertainty' drives the radius from per-residue B-factor/RMSF values.</p>
+<p>Default: <code>"uniform"</code></p>
 </li>
 </ul>
 <h2 id="volume"><code>volume</code></h2>
@@ -2187,37 +2207,6 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 </ul>
 <p>Addition to the radius of the focused sphere, if computed from the radius of parent component (default: 0). Focused radius = component_radius * radius_factor + radius_extent.</p>
 <p>Default: <code>0</code></p>
-<h2 id="camera"><code>camera</code></h2>
-<p>This node instructs to set the camera position and orientation.</p>
-<p>Parent: <code>root</code></p>
-<p>Params:</p>
-<ul>
-<li><strong><code>target:</code></strong><code>[number, number, number]</code></li>
-</ul>
-<p>Coordinates of the point in space at which the camera is pointing.</p>
-<ul>
-<li><strong><code>position:</code></strong><code>[number, number, number]</code></li>
-</ul>
-<p>Coordinates of the camera.</p>
-<ul>
-<li><strong><code>up?:</code></strong><code>[number, number, number]</code></li>
-</ul>
-<p>Vector which will be aligned with the screen Y axis.</p>
-<p>Default: <code>[0, 1, 0]</code></p>
-<ul>
-<li><strong><code>near?:</code></strong><code>number | null</code></li>
-</ul>
-<p>Near clipping plane distance from the position.</p>
-<p>Default: <code>null</code></p>
-<h2 id="canvas"><code>canvas</code></h2>
-<p>This node sets canvas properties.</p>
-<p>Parent: <code>root</code></p>
-<p>Params:</p>
-<ul>
-<li><strong><code>background_color?:</code></strong><code>ColorName | HexColor</code></li>
-</ul>
-<p>Color of the canvas background. Can be either an X11 color name (e.g. <code>"red"</code>) or a hexadecimal code (e.g. <code>"#FF0011"</code>). Defaults to white.</p>
-<p>Default: <code>"white"</code></p>
 <h2 id="primitives"><code>primitives</code></h2>
 <p>This node groups a list of geometrical primitives</p>
 <p>Parent: <code>structure</code> or <code>root</code></p>
@@ -2816,6 +2805,56 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
 <p>Default: <code>null</code></p>
 </li>
 </ul>
+<h2 id="camera"><code>camera</code></h2>
+<p>This node instructs to set the camera position and orientation.</p>
+<p>Parent: <code>root</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>target:</code></strong><code>[number, number, number]</code></li>
+</ul>
+<p>Coordinates of the point in space at which the camera is pointing.</p>
+<ul>
+<li><strong><code>position:</code></strong><code>[number, number, number]</code></li>
+</ul>
+<p>Coordinates of the camera.</p>
+<ul>
+<li><strong><code>up?:</code></strong><code>[number, number, number]</code></li>
+</ul>
+<p>Vector which will be aligned with the screen Y axis.</p>
+<p>Default: <code>[0, 1, 0]</code></p>
+<ul>
+<li><strong><code>near?:</code></strong><code>number | null</code></li>
+</ul>
+<p>Near clipping plane distance from the position.</p>
+<p>Default: <code>null</code></p>
+<h2 id="canvas"><code>canvas</code></h2>
+<p>This node sets canvas properties.</p>
+<p>Parent: <code>root</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>background_color?:</code></strong><code>ColorName | HexColor</code></li>
+</ul>
+<p>Color of the canvas background. Can be either an X11 color name (e.g. <code>"red"</code>) or a hexadecimal code (e.g. <code>"#FF0011"</code>). Defaults to white.</p>
+<p>Default: <code>"white"</code></p>
+<h2 id="transition"><code>transition</code></h2>
+<p>This node specifies camera transition when entering this MVS snapshot.</p>
+<p>Parent: <code>root</code></p>
+<p>Params:</p>
+<ul>
+<li><strong><code>duration_ms?:</code></strong><code>number</code></li>
+</ul>
+<p>Duration of the transition from the previous snapshot to this snapshot, in milliseconds. This overrides the deprecated <code>transition_duration_ms</code> in the snapshot metadata (which applies to the transition from this snapshot to the next snapshot). Defaults to 0.</p>
+<p>Default: <code>0</code></p>
+<ul>
+<li><strong><code>trajectory?:</code></strong><code>"linear" | "linear-relative" | "leap" | "leap-relative"</code></li>
+</ul>
+<p>Camera transition trajectory shape. "linear": interpolates along a straight line with constant absolute speed; "linear-relative": like "linear" but moves relatively slower when zoomed-in more; "leap": zooms out during the transition to capture both the initial and the final camera target (becomes linear if the targets are near); "leap-relative": like "leap" but moves relatively slower when zoomed-in more. Defaults to "linear".</p>
+<p>Default: <code>"linear"</code></p>
+<ul>
+<li><strong><code>easing?:</code></strong><code>"linear" | "bounce-in" | "bounce-out" | "bounce-in-out" | "circle-in" | "circle-out" | "circle-in-out" | "cubic-in" | "cubic-out" | "cubic-in-out" | "exp-in" | "exp-out" | "exp-in-out" | "quad-in" | "quad-out" | "quad-in-out" | "sin-in" | "sin-out" | "sin-in-out"</code></li>
+</ul>
+<p>Transition easing function. Adjusts transition speed near the beginning and end of the transition to create smoother camera motion. Defaults to "linear".</p>
+<p>Default: <code>"linear"</code></p>
 
 
 
@@ -2868,7 +2907,7 @@ Parameters with <code>:</code> are required, i.e. omitting them will result in a
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

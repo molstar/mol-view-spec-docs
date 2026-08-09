@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
       
 
@@ -511,6 +511,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#camera-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camera transitions
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -743,6 +754,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#camera-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camera transitions
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -778,6 +800,7 @@ contrast to the default way of emitting the generated state description using <c
 <span class="s2">- FO-FC (positive) at 3σ, green</span>
 <span class="s2">- FO-FC (negative) at -3σ, red</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="n">duration_ms</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>A snapshot can hold additional metadata such as a custom title and description. Markup is supported.</p>
@@ -788,9 +811,10 @@ parameter. Additionally, global metadata can be added that describes shared prop
     <span class="n">exclude_none</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span>
 <span class="p">)</span>
 </code></pre></div>
-<p>The output is valid MolViewSpec JSON that can be opened in Mol<em>. Mol</em> will interpolate between individual substates and 
-add smooth transitions by default. You can further customize this behavior using the <code>transition_duration_ms</code> and 
-<code>linger_duration_ms</code> properties. </p>
+<p>The output is valid MolViewSpec JSON that can be opened in Mol<em>. 
+Mol</em> will interpolate between individual substates and add smooth transitions by default. 
+You can set the duration of the snapshot using the <code>duration_ms</code> property in the snapshot metadata. 
+(Setting transition duration via <code>transition_duration_ms</code> property is deprecated and a <code>transition</code> node should be used instead (see <a href="#camera-transitions">Camera transitions</a>).)</p>
 <h2 id="animating-snapshots">Animating Snapshots</h2>
 <p>Properties within a single snapshots can be animated. For example:</p>
 <div class="highlight"><pre><span></span><code><span class="n">builder</span> <span class="o">=</span> <span class="n">create_builder</span><span class="p">()</span>
@@ -809,6 +833,29 @@ add smooth transitions by default. You can further customize this behavior using
     <span class="n">easing</span><span class="o">=</span><span class="s2">&quot;sin-in&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
+<h2 id="camera-transitions">Camera transitions</h2>
+<p>Use <code>builder.transition()</code> to customize how the camera moves when transitioning from the previous snapshot to the current snapshot. 
+This is the preferred API for camera motion between states and lets you control the transition duration, trajectory, and easing profile.</p>
+<div class="highlight"><pre><span></span><code><span class="n">builder</span> <span class="o">=</span> <span class="n">create_builder</span><span class="p">()</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">camera</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">transition</span><span class="p">(</span>
+    <span class="n">duration_ms</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span>
+    <span class="n">trajectory</span><span class="o">=</span><span class="s2">&quot;leap&quot;</span><span class="p">,</span>
+    <span class="n">easing</span><span class="o">=</span><span class="s2">&quot;sin-in-out&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">snapshot</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">get_snapshot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Overview&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>The available options are:</p>
+<ul>
+<li><code>duration_ms</code>: total duration of the camera transition in milliseconds</li>
+<li><code>trajectory</code>: path used for the move. Common choices are <code>"linear"</code>, <code>"linear-relative"</code>, <code>"leap"</code>, and
+  <code>"leap-relative"</code></li>
+<li><code>easing</code>: motion curve used to accelerate and decelerate the camera. Examples include <code>"linear"</code>, <code>"sin-in"</code>,
+  <code>"sin-out"</code>, and <code>"sin-in-out"</code></li>
+</ul>
+<p>This overrides the older snapshot metadata-based <code>transition_duration_ms</code> setting for the transition into the current
+snapshot. For simple camera moves, <code>duration_ms</code> is often enough; for more cinematic motion, combine a <code>trajectory</code> and
+an <code>easing</code> function to shape the movement.</p>
 
 
 
@@ -861,7 +908,7 @@ add smooth transitions by default. You can further customize this behavior using
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
