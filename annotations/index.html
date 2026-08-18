@@ -594,6 +594,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../shapes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shapes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../animations/" class="md-nav__link">
         
   
@@ -629,10 +656,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -650,8 +677,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -960,27 +987,27 @@
 <h3 id="json-format">JSON format</h3>
 <p>The simplest example of an annotation in JSON format is just a JSON-encoded <a href="../selectors/">union component expression</a> selector. Here is a simple annotation containing 4 <strong>annotation rows</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label_asym_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label_asym_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label_asym_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;beg_label_seq_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;end_label_seq_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label_asym_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;beg_label_seq_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;end_label_seq_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"label_asym_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"label_asym_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"label_asym_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w"> </span><span class="nt">"beg_label_seq_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nt">"end_label_seq_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"label_asym_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w"> </span><span class="nt">"beg_label_seq_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="nt">"end_label_seq_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="w"> </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
 <p>However, in a typical annotation, there is at least one extra field that provides the value of the dependent variable (such as color or label) mapped to each annotation row:</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label_asym_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#00ff00&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label_asym_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label_asym_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;beg_label_seq_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;end_label_seq_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;skyblue&quot;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label_asym_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;beg_label_seq_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;end_label_seq_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lightblue&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"label_asym_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w"> </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#00ff00"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"label_asym_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w"> </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"label_asym_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w"> </span><span class="nt">"beg_label_seq_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nt">"end_label_seq_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"skyblue"</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"label_asym_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w"> </span><span class="nt">"beg_label_seq_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="nt">"end_label_seq_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="p">,</span><span class="w"> </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lightblue"</span><span class="w"> </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
 <p>This particular annotation (when applied via <code>color_from_uri</code> node) will apply green color (#00ff00) to the whole chain A and three shades of blue to the chain B. Later annotation rows override earlier rows, therefore residues 1–99 will be blue, 100–149 skyblue, 150–160 lightblue, 161–200 skyblue, and 201–end blue. (Tip: to color all the rest of the structure in one color, add an annotation row with no selector fields (e.g. <code>{ "color": "yellow" }</code>) to the beginning of the annotation.)</p>
 <p>Real-life annotation files can include huge numbers of annotation rows. To avoid repeating the same field keys in every row, we can convert the array-of-objects into object-of-arrays. This will result in an equivalent annotation but smaller file size:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;label_asym_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;beg_label_seq_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;end_label_seq_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">160</span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;#00ff00&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;skyblue&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lightblue&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="nt">"label_asym_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"A"</span><span class="p">,</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w"> </span><span class="s2">"B"</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"beg_label_seq_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"end_label_seq_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">160</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"#00ff00"</span><span class="p">,</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">,</span><span class="w"> </span><span class="s2">"skyblue"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lightblue"</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>A more complex example of JSON annotation is provided in <a href="../files/1h9t_domains.json">1h9t_domains.json</a>.</p>
@@ -993,10 +1020,10 @@ _coloring.label_asym_id
 _coloring.beg_label_seq_id
 _coloring.end_label_seq_id
 _coloring.color
-A   .   . &#39;#00ff00&#39;
-B   .   . &#39;blue&#39;
-B 100 200 &#39;skyblue&#39;
-B 150 160 &#39;lightblue&#39;
+A   .   . '#00ff00'
+B   .   . 'blue'
+B 100 200 'skyblue'
+B 150 160 'lightblue'
 </code></pre></div>
 <p>An advantage of the CIF format is that it can include multiple annotation tables in the same file, organized into blocks and categories. Then the MVS file can reference individual tables using <code>block_header</code> (or <code>block_index</code>) and <code>category_name</code> parameters. The column containing the dependent variable can be specified using <code>field_name</code> parameter. In this case, we could use <code>"block_header": "annotation", "category_name": "coloring", "field_name": "color"</code>.</p>
 <h3 id="bcif-format">BCIF format</h3>
@@ -1005,15 +1032,15 @@ B 150 160 &#39;lightblue&#39;
 <h3 id="from-uri">From URI</h3>
 <p>MVS annotations can be referenced in <code>color_from_uri</code>, <code>label_from_uri</code>, <code>tooltip_from_uri</code>, and <code>component_from_uri</code> nodes in MVS tree.</p>
 <p>For example this part of a MVS tree:</p>
-<div class="highlight"><pre><span></span><code>- representation {type: &quot;cartoon&quot;}
-  - color {selector: {label_asym_id: &quot;A&quot;}, color: &quot;#00ff00&quot;}
-  - color {selector: {label_asym_id: &quot;B&quot;}, color: &quot;blue&quot;}
-  - color {selector: {label_asym_id: &quot;B&quot;, beg_label_seq_id: 100, end_label_seq_id: 200}, color: &quot;skyblue&quot;}
-  - color {selector: {label_asym_id: &quot;B&quot;, beg_label_seq_id: 150, end_label_seq_id: 160}, color: &quot;lightblue&quot;}
+<div class="highlight"><pre><span></span><code>- representation {type: "cartoon"}
+  - color {selector: {label_asym_id: "A"}, color: "#00ff00"}
+  - color {selector: {label_asym_id: "B"}, color: "blue"}
+  - color {selector: {label_asym_id: "B", beg_label_seq_id: 100, end_label_seq_id: 200}, color: "skyblue"}
+  - color {selector: {label_asym_id: "B", beg_label_seq_id: 150, end_label_seq_id: 160}, color: "lightblue"}
 </code></pre></div>
 <p>can be replaced by:</p>
-<div class="highlight"><pre><span></span><code>- representation {type: &quot;cartoon&quot;}
-  - color_from_uri {uri: &quot;https://example.org/annotations.json&quot;, format: &quot;json&quot;, schema: &quot;residue_range&quot;}
+<div class="highlight"><pre><span></span><code>- representation {type: "cartoon"}
+  - color_from_uri {uri: "https://example.org/annotations.json", format: "json", schema: "residue_range"}
 </code></pre></div>
 <p>assuming that the JSON annotation file shown in the previous section is available at <code>https://example.org/annotations.json</code>.</p>
 <h4 id="relative-uris">Relative URIs</h4>
@@ -1021,8 +1048,8 @@ B 150 160 &#39;lightblue&#39;
 <p>A special case is when the MVS tree is saved in MVSX format. An MVSX file is a ZIP archive containing the MVS tree in <code>index.mvsj</code> and possibly other files. In this case, the relative URIs will resolve to the files within the archive (e.g. <code>./annotations.json</code> points to the file <code>annotations.json</code> stored in the MSVX archive).</p>
 <h3 id="from-source">From source</h3>
 <p>The MVS annotations can in fact be stored within the same mmCIF file from which the structure coordinates are loaded. To reference these annotations, we can use <code>color_from_source</code>, <code>label_from_source</code>, <code>tooltip_from_source</code>, and <code>component_from_source</code> nodes. Example:</p>
-<div class="highlight"><pre><span></span><code>- representation {type: &quot;cartoon&quot;}
-  - color_from_source {schema: &quot;residue_range&quot;, block_header: &quot;annotation&quot;, category_name: &quot;coloring&quot;}
+<div class="highlight"><pre><span></span><code>- representation {type: "cartoon"}
+  - color_from_source {schema: "residue_range", block_header: "annotation", category_name: "coloring"}
 </code></pre></div>
 <h2 id="annotation-schemas">Annotation schemas</h2>
 <p>The <code>schema</code> parameter of all <code>*_from_uri</code> and <code>*_from_source</code> nodes specifies the MVS annotation schema, i.e. a set of fields used to select a substructure. In the example above we are using <code>residue_range</code> schema, which uses columns <code>label_entity_id</code>, <code>label_asym_id</code>, <code>beg_label_seq_id</code>, and <code>end_label_seq_id</code>. (We didn't provide values for <code>label_entity_id</code>, so it is not taken into account even though the schema supports it).</p>
@@ -1281,13 +1308,13 @@ _labels.label_asym_id
 _labels.label_seq_id
 _labels.color
 _labels.label
-A 100 pink &#39;Substrate binding site&#39;
-A 150 pink &#39;Substrate binding site&#39;
-A 170 pink &#39;Substrate binding site&#39;
-A 200 blue &#39;Inhibitor binding site&#39;
-A 220 blue &#39;Inhibitor binding site&#39;
-A 300 lime &#39;Glycosylation site&#39;
-A 330 lime &#39;Glycosylation site&#39;
+A 100 pink 'Substrate binding site'
+A 150 pink 'Substrate binding site'
+A 170 pink 'Substrate binding site'
+A 200 blue 'Inhibitor binding site'
+A 220 blue 'Inhibitor binding site'
+A 300 lime 'Glycosylation site'
+A 330 lime 'Glycosylation site'
 </code></pre></div>
 <p>On the other hand, the next example will only create 4 labels ("Substrate binding site" label bound to residues 100, 150, and 170; "Inhibitor binding site" label bound to residues 200 and 220; "Glycosylation site" label bound to residue 300; and "Glycosylation site" label bound to residue 330):</p>
 <div class="highlight"><pre><span></span><code>data_annotation
@@ -1297,13 +1324,13 @@ _labels.label_asym_id
 _labels.label_seq_id
 _labels.color
 _labels.label
-1 A 100 pink &#39;Substrate binding site&#39;
-1 A 150 pink &#39;Substrate binding site&#39;
-1 A 170 pink &#39;Substrate binding site&#39;
-2 A 200 blue &#39;Inhibitor binding site&#39;
-2 A 220 blue &#39;Inhibitor binding site&#39;
-. A 300 lime &#39;Glycosylation site&#39;
-. A 330 lime &#39;Glycosylation site&#39;
+1 A 100 pink 'Substrate binding site'
+1 A 150 pink 'Substrate binding site'
+1 A 170 pink 'Substrate binding site'
+2 A 200 blue 'Inhibitor binding site'
+2 A 220 blue 'Inhibitor binding site'
+. A 300 lime 'Glycosylation site'
+. A 330 lime 'Glycosylation site'
 </code></pre></div>
 <p>Note: Annotation rows with empty <code>group_id</code> field (<code>.</code> in CIF, ommitted field or <code>null</code> in JSON) are always treated as separate groups.</p>
 <p>Note 2: <code>group_id</code> field has no effect on colors, tooltips, components. It only makes any difference for labels.</p>

@@ -419,6 +419,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../shapes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shapes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../animations/" class="md-nav__link">
         
   
@@ -456,10 +483,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -477,8 +504,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -887,21 +914,21 @@ server on-demand) and call the <code>loadMvsFromUrl</code> method to retrieve an
 This example uses a MVS file from the address specified in the <code>sourceUrl</code> variable.
 If the MVS view file contains relative references, they will be resolved as relative to <code>sourceUrl</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="cm">&lt;!-- Replace &quot;latest&quot; by the specific version you want to use, e.g. &quot;4.0.0&quot; --&gt;</span>
-        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-        <span class="cm">&lt;!-- Replace &quot;latest&quot; by the specific version you want to use, e.g. &quot;4.0.0&quot; --&gt;</span>
-        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css&quot;</span> <span class="p">/&gt;</span>
+        <span class="cm">&lt;!-- Replace "latest" by the specific version you want to use, e.g. "4.0.0" --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="cm">&lt;!-- Replace "latest" by the specific version you want to use, e.g. "4.0.0" --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css"</span> <span class="p">/&gt;</span>
     <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
     <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;viewer1&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;position: relative; width: 500px; height: 500px;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"viewer1"</span> <span class="na">style</span><span class="o">=</span><span class="s">"position: relative; width: 500px; height: 500px;"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">sourceUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/molstar/molstar/master/examples/mvs/1h9t_domain_labels.mvsj&#39;</span><span class="p">;</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">sourceUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'https://raw.githubusercontent.com/molstar/molstar/master/examples/mvs/1h9t_domain_labels.mvsj'</span><span class="p">;</span>
 <span class="w">            </span><span class="nx">molstar</span><span class="p">.</span><span class="nx">Viewer</span>
-<span class="w">                </span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;viewer1&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">layoutIsExpanded</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">layoutShowControls</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">})</span>
-<span class="w">                </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">viewer</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">loadMvsFromUrl</span><span class="p">(</span><span class="nx">sourceUrl</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;mvsj&#39;</span><span class="p">));</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'viewer1'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">layoutIsExpanded</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">layoutShowControls</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">})</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">viewer</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">loadMvsFromUrl</span><span class="p">(</span><span class="nx">sourceUrl</span><span class="p">,</span><span class="w"> </span><span class="s1">'mvsj'</span><span class="p">));</span>
 <span class="w">        </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -919,18 +946,18 @@ If the MVS view file contains relative references, they will be resolved as rela
 <p>A variation of the first example is to <code>molstar.PluginExtensions.mvs.loadMVS</code> instead of
 <code>loadMvsFromUrl</code>. This allows replacing the MVS view after it has been loaded.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="cm">&lt;!-- Replace &quot;latest&quot; by the specific version you want to use, e.g. &quot;4.0.0&quot; --&gt;</span>
-        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-        <span class="cm">&lt;!-- Replace &quot;latest&quot; by the specific version you want to use, e.g. &quot;4.0.0&quot; --&gt;</span>
-        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css&quot;</span> <span class="p">/&gt;</span>
+        <span class="cm">&lt;!-- Replace "latest" by the specific version you want to use, e.g. "4.0.0" --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="cm">&lt;!-- Replace "latest" by the specific version you want to use, e.g. "4.0.0" --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css"</span> <span class="p">/&gt;</span>
     <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
     <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;viewer2&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;position: relative; width: 500px; height: 500px;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;loadView1();&quot;</span><span class="p">&gt;</span>View 1<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;loadView2();&quot;</span><span class="p">&gt;</span>View 2<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"viewer2"</span> <span class="na">style</span><span class="o">=</span><span class="s">"position: relative; width: 500px; height: 500px;"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"button"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"loadView1();"</span><span class="p">&gt;</span>View 1<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"button"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"loadView2();"</span><span class="p">&gt;</span>View 2<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nx">theViewer</span><span class="p">;</span>
 <span class="w">            </span><span class="kd">function</span><span class="w"> </span><span class="nx">load</span><span class="p">(</span><span class="nx">viewer</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">replace</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -940,13 +967,13 @@ If the MVS view file contains relative references, they will be resolved as rela
 <span class="w">                    </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">mvsData</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">molstar</span><span class="p">.</span><span class="nx">PluginExtensions</span><span class="p">.</span><span class="nx">mvs</span><span class="p">.</span><span class="nx">loadMVS</span><span class="p">(</span><span class="nx">viewer</span><span class="p">.</span><span class="nx">plugin</span><span class="p">,</span><span class="w"> </span><span class="nx">mvsData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">sourceUrl</span><span class="o">:</span><span class="w"> </span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">sanityChecks</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">replaceExisting</span><span class="o">:</span><span class="w"> </span><span class="nx">replace</span><span class="w"> </span><span class="p">}));</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">            </span><span class="kd">function</span><span class="w"> </span><span class="nx">loadView1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nx">load</span><span class="p">(</span><span class="nx">theViewer</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/molstar/molstar/master/examples/mvs/1cbs.mvsj&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="w">                </span><span class="nx">load</span><span class="p">(</span><span class="nx">theViewer</span><span class="p">,</span><span class="w"> </span><span class="s1">'https://raw.githubusercontent.com/molstar/molstar/master/examples/mvs/1cbs.mvsj'</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">            </span><span class="kd">function</span><span class="w"> </span><span class="nx">loadView2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nx">load</span><span class="p">(</span><span class="nx">theViewer</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/molstar/molstar/master/examples/mvs/1cbs-focus.mvsj&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="w">                </span><span class="nx">load</span><span class="p">(</span><span class="nx">theViewer</span><span class="p">,</span><span class="w"> </span><span class="s1">'https://raw.githubusercontent.com/molstar/molstar/master/examples/mvs/1cbs-focus.mvsj'</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">            </span><span class="nx">molstar</span><span class="p">.</span><span class="nx">Viewer</span>
-<span class="w">                </span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;viewer2&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">layoutIsExpanded</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">layoutShowControls</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">})</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'viewer2'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">layoutIsExpanded</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">layoutShowControls</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">})</span>
 <span class="w">                </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">viewer</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                    </span><span class="nx">theViewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">viewer</span><span class="p">;</span>
 <span class="w">                    </span><span class="nx">loadView1</span><span class="p">();</span>
@@ -989,37 +1016,37 @@ HTML. However, for a better developer experience consider writing the code in Ty
 If the built MVS view contains relative references, they will be resolved as relative to the URL of this HTML
 page.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="cm">&lt;!-- Replace &quot;latest&quot; by the specific version you want to use, e.g. &quot;4.0.0&quot; --&gt;</span>
-        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-        <span class="cm">&lt;!-- Replace &quot;latest&quot; by the specific version you want to use, e.g. &quot;4.0.0&quot; --&gt;</span>
-        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css&quot;</span> <span class="p">/&gt;</span>
+        <span class="cm">&lt;!-- Replace "latest" by the specific version you want to use, e.g. "4.0.0" --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="cm">&lt;!-- Replace "latest" by the specific version you want to use, e.g. "4.0.0" --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css"</span> <span class="p">/&gt;</span>
     <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
     <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;viewer3&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;position: relative; width: 500px; height: 500px;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"viewer3"</span> <span class="na">style</span><span class="o">=</span><span class="s">"position: relative; width: 500px; height: 500px;"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="w">            </span><span class="c1">// Build an ad-hoc MVS view</span>
 <span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">molstar</span><span class="p">.</span><span class="nx">PluginExtensions</span><span class="p">.</span><span class="nx">mvs</span><span class="p">.</span><span class="nx">MVSData</span><span class="p">.</span><span class="nx">createBuilder</span><span class="p">();</span>
 <span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">structure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">builder</span>
-<span class="w">                </span><span class="p">.</span><span class="nx">download</span><span class="p">({</span><span class="w"> </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://www.ebi.ac.uk/pdbe/entry-files/1cbs.bcif&#39;</span><span class="w"> </span><span class="p">})</span>
-<span class="w">                </span><span class="p">.</span><span class="nx">parse</span><span class="p">({</span><span class="w"> </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bcif&#39;</span><span class="w"> </span><span class="p">})</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">download</span><span class="p">({</span><span class="w"> </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">'https://www.ebi.ac.uk/pdbe/entry-files/1cbs.bcif'</span><span class="w"> </span><span class="p">})</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">parse</span><span class="p">({</span><span class="w"> </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s1">'bcif'</span><span class="w"> </span><span class="p">})</span>
 <span class="w">                </span><span class="p">.</span><span class="nx">modelStructure</span><span class="p">({});</span>
 <span class="w">            </span><span class="nx">structure</span>
-<span class="w">                </span><span class="p">.</span><span class="nx">component</span><span class="p">({</span><span class="w"> </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;polymer&#39;</span><span class="w"> </span><span class="p">})</span>
-<span class="w">                </span><span class="p">.</span><span class="nx">representation</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cartoon&#39;</span><span class="w"> </span><span class="p">})</span>
-<span class="w">                </span><span class="p">.</span><span class="nx">color</span><span class="p">({</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;green&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">component</span><span class="p">({</span><span class="w"> </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">'polymer'</span><span class="w"> </span><span class="p">})</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">representation</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">'cartoon'</span><span class="w"> </span><span class="p">})</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">color</span><span class="p">({</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">'green'</span><span class="w"> </span><span class="p">});</span>
 <span class="w">            </span><span class="nx">structure</span>
-<span class="w">                </span><span class="p">.</span><span class="nx">component</span><span class="p">({</span><span class="w"> </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ligand&#39;</span><span class="w"> </span><span class="p">})</span>
-<span class="w">                </span><span class="p">.</span><span class="nx">label</span><span class="p">({</span><span class="w"> </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Retinoic acid&#39;</span><span class="w"> </span><span class="p">})</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">component</span><span class="p">({</span><span class="w"> </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">'ligand'</span><span class="w"> </span><span class="p">})</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">label</span><span class="p">({</span><span class="w"> </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="s1">'Retinoic acid'</span><span class="w"> </span><span class="p">})</span>
 <span class="w">                </span><span class="p">.</span><span class="nx">focus</span><span class="p">({})</span>
-<span class="w">                </span><span class="p">.</span><span class="nx">representation</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ball_and_stick&#39;</span><span class="w"> </span><span class="p">})</span>
-<span class="w">                </span><span class="p">.</span><span class="nx">color</span><span class="p">({</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#cc3399&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">representation</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">'ball_and_stick'</span><span class="w"> </span><span class="p">})</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">color</span><span class="p">({</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">'#cc3399'</span><span class="w"> </span><span class="p">});</span>
 <span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">mvsData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">builder</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
 <span class="w">            </span><span class="c1">// Initialize viewer and load MVSJ</span>
 <span class="w">            </span><span class="nx">molstar</span><span class="p">.</span><span class="nx">Viewer</span>
-<span class="w">                </span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;viewer3&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">layoutIsExpanded</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">layoutShowControls</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">})</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'viewer3'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">layoutIsExpanded</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">layoutShowControls</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">})</span>
 <span class="w">                </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">viewer</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">molstar</span><span class="p">.</span><span class="nx">PluginExtensions</span><span class="p">.</span><span class="nx">mvs</span><span class="p">.</span><span class="nx">loadMVS</span><span class="p">(</span><span class="nx">viewer</span><span class="p">.</span><span class="nx">plugin</span><span class="p">,</span><span class="w"> </span><span class="nx">mvsData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">sourceUrl</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="nx">sanityChecks</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">replaceExisting</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}));</span>
 <span class="w">        </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>

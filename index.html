@@ -547,6 +547,33 @@
   
   
     <li class="md-nav__item">
+      <a href="shapes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shapes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="animations/" class="md-nav__link">
         
   
@@ -582,10 +609,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -603,8 +630,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -918,19 +945,19 @@
 <p>MVS is based on a tree format, i.e. a molecular view is described as a nested tree where individual <strong>nodes</strong> represent data operations needed to create the view. Each node is defined by its <strong>kind</strong> (specifies the type of operation, e.g. <code>download</code>, <code>parse</code>, <code>color</code>) and <strong>parameters</strong> (provide additional details for the operation, e.g. <code>url</code>, <code>format</code>, <code>selector</code>). </p>
 <p>A simple example of a MVS tree showing PDB structure 1cbs:</p>
 <div class="highlight"><pre><span></span><code>─root {}
- ├──download {url: &quot;https://www.ebi.ac.uk/pdbe/entry-files/1cbs.bcif&quot;}
- │  └──parse {format: &quot;bcif&quot;}
- │     └──structure {type: &quot;model&quot;}
- │        ├──component {selector: &quot;polymer&quot;}
- │        │  ├──representation {type: &quot;cartoon&quot;}
- │        │  │  ├──color {color: &quot;green&quot;}
- │        │  │  └──color {selector: {label_asym_id: &quot;A&quot;, beg_label_seq_id: 1, end_label_seq_id: 50}, color: &quot;#6688ff&quot;}
- │        │  └──label {text: &quot;Protein&quot;}
- │        └──component {selector: &quot;ligand&quot;}
- │           ├──representation {type: &quot;ball_and_stick&quot;}
- │           │  └──color {color: &quot;#cc3399&quot;}
- │           └──label {text: &quot;Retinoic Acid&quot;}
- ├──canvas {background_color: &quot;#ffffee&quot;}
+ ├──download {url: "https://www.ebi.ac.uk/pdbe/entry-files/1cbs.bcif"}
+ │  └──parse {format: "bcif"}
+ │     └──structure {type: "model"}
+ │        ├──component {selector: "polymer"}
+ │        │  ├──representation {type: "cartoon"}
+ │        │  │  ├──color {color: "green"}
+ │        │  │  └──color {selector: {label_asym_id: "A", beg_label_seq_id: 1, end_label_seq_id: 50}, color: "#6688ff"}
+ │        │  └──label {text: "Protein"}
+ │        └──component {selector: "ligand"}
+ │           ├──representation {type: "ball_and_stick"}
+ │           │  └──color {color: "#cc3399"}
+ │           └──label {text: "Retinoic Acid"}
+ ├──canvas {background_color: "#ffffee"}
  └──camera {target: [17,21,27], position: [41,34,69], up: [-0.129,0.966,-0.224]}
 </code></pre></div>
 <p>This is a schematic representation of the tree, not the actual data format! Each line represents a node defined by its kind (root, download, parse...) and parameters (everything within {braces}).</p>
@@ -944,22 +971,22 @@
 <h3 id="mvsj">MVSJ</h3>
 <p>A MolViewSpec tree can be encoded and stored in <code>.mvsj</code> format (MolViewSpec JSON), which is basically a JSON representation of the tree with additional metadata. The example above would be encoded as:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Example MolViewSpec - 1cbs with labelled protein and ligand&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-11-24T10:38:17.483Z&quot;</span>
+<span class="w">  </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example MolViewSpec - 1cbs with labelled protein and ligand"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-11-24T10:38:17.483Z"</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;root&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;root&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;children&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="nt">"root"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;download&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.ebi.ac.uk/pdbe/entry-files/1cbs.bcif&quot;</span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;children&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"download"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.ebi.ac.uk/pdbe/entry-files/1cbs.bcif"</span><span class="p">},</span>
+<span class="w">        </span><span class="nt">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">          </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;parse&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bcif&quot;</span><span class="p">},</span>
-<span class="w">            </span><span class="nt">&quot;children&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parse"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bcif"</span><span class="p">},</span>
+<span class="w">            </span><span class="nt">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="err">...</span>
 </code></pre></div>
 <p>Complete file: <a href="files/1cbs.mvsj">1cbs.mvsj</a></p>
@@ -973,7 +1000,7 @@
 <p>It is important that the <code>index.mvsj</code> be at the top level of the archive, not in a subdirectory. When creating the archive from command line:</p>
 <div class="highlight"><pre><span></span><code>$ ls example/
 annotations-1h9t.cif   index.mvsj
-$ zip -r example.mvsx example/            # Wrong, won&#39;t create a valid MVSX file
+$ zip -r example.mvsx example/            # Wrong, won't create a valid MVSX file
 $ cd example/; zip -r ../example.mvsx *   # Correct
 </code></pre></div>
 <p>Example: <a href="files/1h9t.mvsx">1ht9.mvsx</a></p>

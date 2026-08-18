@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../volumes/">
+        <link rel="prev" href="../shapes/">
       
       
         <link rel="next" href="../mvs-molstar-extension/">
@@ -416,6 +416,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../shapes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shapes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -545,10 +572,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -566,8 +593,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -793,13 +820,13 @@ telling tool tailored to structural biology.</p>
 <p>Use the builder as normal and define the desired scene. Invoke <code>get_snapshot()</code> to obtain a snapshot instance (in 
 contrast to the default way of emitting the generated state description using <code>get_state()</code>).</p>
 <div class="highlight"><pre><span></span><code><span class="n">snapshot1</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">get_snapshot</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;1tqn&quot;</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"1tqn"</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">"""</span>
 <span class="s2">### 1tqn with ligand and electron density map</span>
 <span class="s2">- 2FO-FC at 1.5σ, blue</span>
 <span class="s2">- FO-FC (positive) at 3σ, green</span>
 <span class="s2">- FO-FC (negative) at -3σ, red</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="s2">"""</span><span class="p">,</span>
     <span class="n">duration_ms</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
@@ -807,7 +834,7 @@ contrast to the default way of emitting the generated state description using <c
 <h2 id="combining-snapshots">Combining snapshots</h2>
 <p>Individual snapshots can then be combined into an animation by providing them in the desired order using the <code>snapshots</code>
 parameter. Additionally, global metadata can be added that describes shared properties of all snapshots.</p>
-<div class="highlight"><pre><span></span><code><span class="n">states</span> <span class="o">=</span> <span class="n">States</span><span class="p">(</span><span class="n">snapshots</span><span class="o">=</span><span class="p">[</span><span class="n">snapshot1</span><span class="p">,</span> <span class="n">snapshot2</span><span class="p">],</span> <span class="n">metadata</span><span class="o">=</span><span class="n">GlobalMetadata</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;1tqn + Volume Server&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">states</span> <span class="o">=</span> <span class="n">States</span><span class="p">(</span><span class="n">snapshots</span><span class="o">=</span><span class="p">[</span><span class="n">snapshot1</span><span class="p">,</span> <span class="n">snapshot2</span><span class="p">],</span> <span class="n">metadata</span><span class="o">=</span><span class="n">GlobalMetadata</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">"1tqn + Volume Server"</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">(</span>
     <span class="n">exclude_none</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span>
 <span class="p">)</span>
 </code></pre></div>
@@ -818,19 +845,19 @@ You can set the duration of the snapshot using the <code>duration_ms</code> prop
 <h2 id="animating-snapshots">Animating Snapshots</h2>
 <p>Properties within a single snapshots can be animated. For example:</p>
 <div class="highlight"><pre><span></span><code><span class="n">builder</span> <span class="o">=</span> <span class="n">create_builder</span><span class="p">()</span>
-<span class="n">structure</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://files.wwpdb.org/download/1cbs.cif&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;mmcif&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">model_structure</span><span class="p">()</span>
-<span class="n">structure</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;polymer&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;cartoon&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span>
-    <span class="n">ref</span><span class="o">=</span><span class="s2">&quot;clip&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;plane&quot;</span><span class="p">,</span> <span class="n">point</span><span class="o">=</span><span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">normal</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">structure</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">"https://files.wwpdb.org/download/1cbs.cif"</span><span class="p">)</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"mmcif"</span><span class="p">)</span><span class="o">.</span><span class="n">model_structure</span><span class="p">()</span>
+<span class="n">structure</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">"polymer"</span><span class="p">)</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"cartoon"</span><span class="p">)</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span>
+    <span class="n">ref</span><span class="o">=</span><span class="s2">"clip"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"plane"</span><span class="p">,</span> <span class="n">point</span><span class="o">=</span><span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">normal</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="n">anim</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">animation</span><span class="p">()</span>
 <span class="n">anim</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span>
-    <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-    <span class="n">target_ref</span><span class="o">=</span><span class="s2">&quot;clip&quot;</span><span class="p">,</span>
+    <span class="n">kind</span><span class="o">=</span><span class="s2">"scalar"</span><span class="p">,</span>
+    <span class="n">target_ref</span><span class="o">=</span><span class="s2">"clip"</span><span class="p">,</span>
     <span class="n">duration_ms</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span>
-    <span class="nb">property</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;point&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="nb">property</span><span class="o">=</span><span class="p">[</span><span class="s2">"point"</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
     <span class="n">end</span><span class="o">=</span><span class="mi">55</span><span class="p">,</span>
-    <span class="n">easing</span><span class="o">=</span><span class="s2">&quot;sin-in&quot;</span><span class="p">,</span>
+    <span class="n">easing</span><span class="o">=</span><span class="s2">"sin-in"</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
 <h2 id="camera-transitions">Camera transitions</h2>
@@ -840,10 +867,10 @@ This is the preferred API for camera motion between states and lets you control 
 <span class="n">builder</span><span class="o">.</span><span class="n">camera</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
 <span class="n">builder</span><span class="o">.</span><span class="n">transition</span><span class="p">(</span>
     <span class="n">duration_ms</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span>
-    <span class="n">trajectory</span><span class="o">=</span><span class="s2">&quot;leap&quot;</span><span class="p">,</span>
-    <span class="n">easing</span><span class="o">=</span><span class="s2">&quot;sin-in-out&quot;</span><span class="p">,</span>
+    <span class="n">trajectory</span><span class="o">=</span><span class="s2">"leap"</span><span class="p">,</span>
+    <span class="n">easing</span><span class="o">=</span><span class="s2">"sin-in-out"</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">snapshot</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">get_snapshot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Overview&quot;</span><span class="p">)</span>
+<span class="n">snapshot</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">get_snapshot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Overview"</span><span class="p">)</span>
 </code></pre></div>
 <p>The available options are:</p>
 <ul>

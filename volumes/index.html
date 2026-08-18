@@ -12,7 +12,7 @@
         <link rel="prev" href="../primitives/">
       
       
-        <link rel="next" href="../animations/">
+        <link rel="next" href="../shapes/">
       
       
         
@@ -488,6 +488,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../shapes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shapes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../animations/" class="md-nav__link">
         
   
@@ -523,10 +550,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -544,8 +571,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -751,15 +778,15 @@ https://www.ebi.ac.uk/pdbe/densities/ - RCSB PDB: https://maps.rcsb.org/) for th
 <p>Specify the format as part of the parse step.</p>
 <div class="highlight"><pre><span></span><code><span class="n">builder</span> <span class="o">=</span> <span class="n">create_builder</span><span class="p">()</span>
 
-<span class="n">download</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://www.ebi.ac.uk/pdbe/entry-files/1tqn.ccp4&quot;</span><span class="p">)</span>
-<span class="n">volume</span> <span class="o">=</span> <span class="n">download</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;map&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">volume</span><span class="p">()</span>
+<span class="n">download</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">"https://www.ebi.ac.uk/pdbe/entry-files/1tqn.ccp4"</span><span class="p">)</span>
+<span class="n">volume</span> <span class="o">=</span> <span class="n">download</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"map"</span><span class="p">)</span><span class="o">.</span><span class="n">volume</span><span class="p">()</span>
 </code></pre></div>
 <p>Analogous to standard molecular data, dedicated and customizable representations can now be added. In this case 
 <code>isosurface</code>. <code>relative_isovalue</code> or <code>absolute_isovalue</code> adjust, which parts of the data are shown. <code>show_wireframe</code> and
 <code>show_faces</code> provide options for finer-grained customization. Define colors and transparency as usual.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span>
-    <span class="n">volume</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;isosurface&quot;</span><span class="p">,</span> <span class="n">relative_isovalue</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+    <span class="n">volume</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"isosurface"</span><span class="p">,</span> <span class="n">relative_isovalue</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">)</span>
     <span class="o">.</span><span class="n">opacity</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.66</span><span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
@@ -768,30 +795,30 @@ https://www.ebi.ac.uk/pdbe/densities/ - RCSB PDB: https://maps.rcsb.org/) for th
 <p>Create a view of 1tqn, which represents the ligand as ball-and-stick and focuses on it.</p>
 <div class="highlight"><pre><span></span><code><span class="n">builder</span> <span class="o">=</span> <span class="n">create_builder</span><span class="p">()</span>
 
-<span class="n">structure</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">_url_for_mmcif</span><span class="p">(</span><span class="s2">&quot;1tqn&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;mmcif&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">model_structure</span><span class="p">()</span>
-<span class="n">structure</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;polymer&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;cartoon&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
-<span class="n">ligand</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;ligand&quot;</span><span class="p">)</span>
-<span class="n">ligand</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;ball_and_stick&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">custom</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;molstar_color_theme_name&quot;</span><span class="p">:</span> <span class="s2">&quot;element-symbol&quot;</span><span class="p">})</span>
+<span class="n">structure</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">_url_for_mmcif</span><span class="p">(</span><span class="s2">"1tqn"</span><span class="p">))</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"mmcif"</span><span class="p">)</span><span class="o">.</span><span class="n">model_structure</span><span class="p">()</span>
+<span class="n">structure</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">"polymer"</span><span class="p">)</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"cartoon"</span><span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"white"</span><span class="p">)</span>
+<span class="n">ligand</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">"ligand"</span><span class="p">)</span>
+<span class="n">ligand</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"ball_and_stick"</span><span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">custom</span><span class="o">=</span><span class="p">{</span><span class="s2">"molstar_color_theme_name"</span><span class="p">:</span> <span class="s2">"element-symbol"</span><span class="p">})</span>
 <span class="n">ligand</span><span class="o">.</span><span class="n">focus</span><span class="p">(</span><span class="n">up</span><span class="o">=</span><span class="p">[</span><span class="mf">0.98</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.19</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">direction</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">28.47</span><span class="p">,</span> <span class="o">-</span><span class="mf">17.66</span><span class="p">,</span> <span class="o">-</span><span class="mf">16.32</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">radius_extent</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
 <p>Enrich this view with density data, provided by <a href="https://www.ebi.ac.uk/pdbe/densities/">PDBe's Volume Server</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="n">volume_data</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://www.ebi.ac.uk/pdbe/densities/x-ray/1tqn/box/-22.367,-33.367,-21.634/-7.106,-10.042,-0.937?detail=3&quot;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;bcif&quot;</span><span class="p">)</span>
+    <span class="n">url</span><span class="o">=</span><span class="s2">"https://www.ebi.ac.uk/pdbe/densities/x-ray/1tqn/box/-22.367,-33.367,-21.634/-7.106,-10.042,-0.937?detail=3"</span>
+<span class="p">)</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"bcif"</span><span class="p">)</span>
 </code></pre></div>
 <p>With this data at hand, dedicated channels can be created that visualize the electron density.</p>
-<div class="highlight"><pre><span></span><code><span class="n">volume_data</span><span class="o">.</span><span class="n">volume</span><span class="p">(</span><span class="n">channel_id</span><span class="o">=</span><span class="s2">&quot;2FO-FC&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span>
-    <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;isosurface&quot;</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><span class="n">volume_data</span><span class="o">.</span><span class="n">volume</span><span class="p">(</span><span class="n">channel_id</span><span class="o">=</span><span class="s2">"2FO-FC"</span><span class="p">)</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s2">"isosurface"</span><span class="p">,</span>
     <span class="n">relative_isovalue</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
     <span class="n">show_wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">show_faces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">opacity</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">)</span><span class="o">.</span><span class="n">opacity</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 
-<span class="n">fo_fc</span> <span class="o">=</span> <span class="n">volume_data</span><span class="o">.</span><span class="n">volume</span><span class="p">(</span><span class="n">channel_id</span><span class="o">=</span><span class="s2">&quot;FO-FC&quot;</span><span class="p">)</span>
-<span class="n">fo_fc</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;isosurface&quot;</span><span class="p">,</span> <span class="n">relative_isovalue</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">show_wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">opacity</span><span class="p">(</span>
+<span class="n">fo_fc</span> <span class="o">=</span> <span class="n">volume_data</span><span class="o">.</span><span class="n">volume</span><span class="p">(</span><span class="n">channel_id</span><span class="o">=</span><span class="s2">"FO-FC"</span><span class="p">)</span>
+<span class="n">fo_fc</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"isosurface"</span><span class="p">,</span> <span class="n">relative_isovalue</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">show_wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"green"</span><span class="p">)</span><span class="o">.</span><span class="n">opacity</span><span class="p">(</span>
     <span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span>
 <span class="p">)</span>
-<span class="n">fo_fc</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;isosurface&quot;</span><span class="p">,</span> <span class="n">relative_isovalue</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span> <span class="n">show_wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">opacity</span><span class="p">(</span>
+<span class="n">fo_fc</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"isosurface"</span><span class="p">,</span> <span class="n">relative_isovalue</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span> <span class="n">show_wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">)</span><span class="o">.</span><span class="n">opacity</span><span class="p">(</span>
     <span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span>
 <span class="p">)</span>
 </code></pre></div>

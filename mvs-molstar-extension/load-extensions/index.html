@@ -419,6 +419,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../shapes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shapes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../animations/" class="md-nav__link">
         
   
@@ -456,10 +483,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -477,8 +504,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -806,21 +833,21 @@
 <p>The following state assigns <code>is_hidden</code> custom state to the representation:</p>
 <div class="highlight"><pre><span></span><code><span class="n">builder</span> <span class="o">=</span> <span class="n">create_builder</span><span class="p">()</span>
 <span class="p">(</span>
-    <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://files.wwpdb.org/download/1cbs.cif&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;mmcif&quot;</span><span class="p">)</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">"https://files.wwpdb.org/download/1cbs.cif"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"mmcif"</span><span class="p">)</span>
     <span class="o">.</span><span class="n">model_structure</span><span class="p">()</span>
     <span class="o">.</span><span class="n">component</span><span class="p">()</span>
-    <span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="n">custom</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;is_hidden&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
-    <span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="n">custom</span><span class="o">=</span><span class="p">{</span><span class="s2">"is_hidden"</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+    <span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="the-extension">The Extension</h3>
 <p>Based on the <code>is_hidden</code> property, the extension will update the state of the corresponding Mol* node when loading the state to make the representation hidden:</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MolstarLoadingExtension</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/extensions/mvs/load&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MolstarLoadingExtension</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'molstar/lib/extensions/mvs/load'</span><span class="p">;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">IsHiddenCustomStateExtension</span><span class="o">:</span><span class="w"> </span><span class="kt">MolstarLoadingExtension</span><span class="o">&lt;</span><span class="p">{}</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;is-hidden-custom-state&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Allow updating initial visibility of nodes&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">'is-hidden-custom-state'</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s1">'Allow updating initial visibility of nodes'</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">createExtensionContext</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({}),</span>
 <span class="w">    </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">updateTarget</span><span class="p">,</span><span class="w"> </span><span class="nx">node</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">node</span><span class="p">.</span><span class="nx">custom</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">node</span><span class="p">.</span><span class="nx">custom</span><span class="o">?</span><span class="p">.</span><span class="nx">is_hidden</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>

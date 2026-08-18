@@ -516,6 +516,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../shapes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shapes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../animations/" class="md-nav__link">
         
   
@@ -551,10 +578,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -572,8 +599,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -818,32 +845,32 @@
 <span class="w">    </span><span class="nx">end_label_seq_id?</span><span class="o">:</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w">   </span><span class="c1">// Maximum label_seq_id (inclusive), leave blank to go to the end of the chain</span>
 <span class="w">    </span><span class="nx">beg_auth_seq_id?</span><span class="o">:</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w">    </span><span class="c1">// Minimum auth_seq_id (inclusive), leave blank to start from the beginning of the chain</span>
 <span class="w">    </span><span class="nx">end_auth_seq_id?</span><span class="o">:</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w">    </span><span class="c1">// Maximum auth_seq_id (inclusive), leave blank to go to the end of the chain</span>
-<span class="w">    </span><span class="nx">label_atom_id?</span><span class="o">:</span><span class="w"> </span><span class="kt">str</span><span class="p">,</span><span class="w">      </span><span class="c1">// Atom name like &#39;CA&#39;, &#39;N&#39;, &#39;O&#39;, in label_* numbering</span>
-<span class="w">    </span><span class="nx">auth_atom_id?</span><span class="o">:</span><span class="w"> </span><span class="kt">str</span><span class="p">,</span><span class="w">       </span><span class="c1">// Atom name like &#39;CA&#39;, &#39;N&#39;, &#39;O&#39;, in auth_* numbering</span>
-<span class="w">    </span><span class="nx">type_symbol?</span><span class="o">:</span><span class="w"> </span><span class="kt">str</span><span class="p">,</span><span class="w">        </span><span class="c1">// Element symbol like &#39;H&#39;, &#39;HE&#39;, &#39;LI&#39;, &#39;BE&#39;</span>
+<span class="w">    </span><span class="nx">label_atom_id?</span><span class="o">:</span><span class="w"> </span><span class="kt">str</span><span class="p">,</span><span class="w">      </span><span class="c1">// Atom name like 'CA', 'N', 'O', in label_* numbering</span>
+<span class="w">    </span><span class="nx">auth_atom_id?</span><span class="o">:</span><span class="w"> </span><span class="kt">str</span><span class="p">,</span><span class="w">       </span><span class="c1">// Atom name like 'CA', 'N', 'O', in auth_* numbering</span>
+<span class="w">    </span><span class="nx">type_symbol?</span><span class="o">:</span><span class="w"> </span><span class="kt">str</span><span class="p">,</span><span class="w">        </span><span class="c1">// Element symbol like 'H', 'HE', 'LI', 'BE'</span>
 <span class="w">    </span><span class="nx">atom_id?</span><span class="o">:</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w">            </span><span class="c1">// Unique atom identifier (_atom_site.id)</span>
 <span class="w">    </span><span class="nx">atom_index?</span><span class="o">:</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w">         </span><span class="c1">// 0-based index of the atom in the source data</span>
-<span class="w">    </span><span class="nx">instance_id?</span><span class="o">:</span><span class="w"> </span><span class="kt">str</span><span class="w">         </span><span class="c1">// Instance identifier to distinguish instances of the same chain created by applying different symmetry operators, like &#39;ASM-X0-1&#39; for assemblies or &#39;1_555&#39; for crystals</span>
+<span class="w">    </span><span class="nx">instance_id?</span><span class="o">:</span><span class="w"> </span><span class="kt">str</span><span class="w">         </span><span class="c1">// Instance identifier to distinguish instances of the same chain created by applying different symmetry operators, like 'ASM-X0-1' for assemblies or '1_555' for crystals</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>A component expression can include any combination of the fields. An expression with multiple fields selects atoms that fulfill all fields at the same time. Examples:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Select whole chain A</span>
-<span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">label_asym_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">label_asym_id</span><span class="o">:</span><span class="w"> </span><span class="s1">'A'</span><span class="w"> </span><span class="p">}</span>
 
 <span class="c1">// Select residues 100 to 200 (inclusive) in chain B</span>
-<span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">label_asym_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">beg_label_seq_id</span><span class="o">:</span><span class="w"> </span><span class="kt">100</span><span class="p">,</span><span class="w"> </span><span class="nx">end_label_seq_id</span><span class="o">:</span><span class="w"> </span><span class="kt">200</span><span class="w"> </span><span class="p">}</span>
+<span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">label_asym_id</span><span class="o">:</span><span class="w"> </span><span class="s1">'B'</span><span class="p">,</span><span class="w"> </span><span class="nx">beg_label_seq_id</span><span class="o">:</span><span class="w"> </span><span class="kt">100</span><span class="p">,</span><span class="w"> </span><span class="nx">end_label_seq_id</span><span class="o">:</span><span class="w"> </span><span class="kt">200</span><span class="w"> </span><span class="p">}</span>
 
 <span class="c1">// Select C-alpha atoms in residue 100 (using auth_* numbering) of any chain</span>
-<span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">auth_seq_id</span><span class="o">:</span><span class="w"> </span><span class="kt">100</span><span class="p">,</span><span class="w"> </span><span class="nx">type_symbol</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">auth_atom_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;CA&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">auth_seq_id</span><span class="o">:</span><span class="w"> </span><span class="kt">100</span><span class="p">,</span><span class="w"> </span><span class="nx">type_symbol</span><span class="o">:</span><span class="w"> </span><span class="s1">'C'</span><span class="p">,</span><span class="w"> </span><span class="nx">auth_atom_id</span><span class="o">:</span><span class="w"> </span><span class="s1">'CA'</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 </li>
 <li>
 <p><strong>Union component expression</strong> is an array of simple component expressions. A union component expression is interpreted as set union, i.e. it selects all atoms that fulfill at least one of the expressions in the array. Example:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Select chains A, B, and C</span>
-<span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">label_asym_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">label_asym_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;B&#39;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">label_asym_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;C&#39;</span><span class="w"> </span><span class="p">}];</span>
+<span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">label_asym_id</span><span class="o">:</span><span class="w"> </span><span class="s1">'A'</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">label_asym_id</span><span class="o">:</span><span class="w"> </span><span class="s1">'B'</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">label_asym_id</span><span class="o">:</span><span class="w"> </span><span class="s1">'C'</span><span class="w"> </span><span class="p">}];</span>
 
 <span class="c1">// Select residues up to 100 (inclusive) in chain A plus all magnesium atoms</span>
-<span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">label_asym_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">end_label_seq_id</span><span class="o">:</span><span class="w"> </span><span class="kt">100</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type_symbol</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;MG&#39;</span><span class="w"> </span><span class="p">}];</span>
+<span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">label_asym_id</span><span class="o">:</span><span class="w"> </span><span class="s1">'A'</span><span class="p">,</span><span class="w"> </span><span class="nx">end_label_seq_id</span><span class="o">:</span><span class="w"> </span><span class="kt">100</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type_symbol</span><span class="o">:</span><span class="w"> </span><span class="s1">'MG'</span><span class="w"> </span><span class="p">}];</span>
 </code></pre></div>
 </li>
 </ul>
@@ -872,10 +899,10 @@
 <p>Component expressions can be applied to primitives as well. Furthermore, a <code>ref</code> can be provided to make selections with
 a specific node when working e.g. with multiple structures.
 Any MVS node allows you to set an anchor:</p>
-<div class="highlight"><pre><span></span><code>builder.download(url=url).parse(format=&quot;mmcif&quot;).model_structure(ref=&quot;X&quot;)
+<div class="highlight"><pre><span></span><code>builder.download(url=url).parse(format="mmcif").model_structure(ref="X")
 </code></pre></div>
 <p>This <code>ref</code> can then be referenced in the context of a selection:</p>
-<div class="highlight"><pre><span></span><code>PrimitiveComponentExpressions(structure_ref=&quot;X&quot;, expressions=[ComponentExpression(auth_seq_id=508)])
+<div class="highlight"><pre><span></span><code>PrimitiveComponentExpressions(structure_ref="X", expressions=[ComponentExpression(auth_seq_id=508)])
 </code></pre></div>
 <p>An alternative to using selectors is using <a href="../annotations/">MVS annotations</a>. This means defining the selections in a separate file and referencing them from the MVS file.</p>
 

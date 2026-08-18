@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../camera-settings/">
+        <link rel="prev" href="../volumes/">
       
       
-        <link rel="next" href="../volumes/">
+        <link rel="next" href="../animations/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Primitives - MolViewSpec Documentation</title>
+        <title>Shapes - MolViewSpec Documentation</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#molviewspec-primitives" class="md-skip">
+        <a href="#molviewspec-shapes" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Primitives
+              Shapes
             
           </span>
         </div>
@@ -362,37 +362,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Primitives
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../primitives/" class="md-nav__link">
         
   
   
@@ -408,59 +381,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#custom-visuals-using-3d-vectors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Custom visuals using 3D vectors
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#combining-primitives-with-componentexpression-selections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Combining primitives with ComponentExpression selections
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using references
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -496,10 +416,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../shapes/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shapes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -515,6 +462,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parsing-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parsing a file
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-specific-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format-specific options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Format-specific options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coloring-a-vtp-by-a-data-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coloring a VTP by a data array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colors-carried-inside-a-ply-or-obj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colors carried inside a PLY or OBJ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -738,10 +777,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#custom-visuals-using-3d-vectors" class="md-nav__link">
+  <a href="#parsing-a-file" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Custom visuals using 3D vectors
+        Parsing a file
       
     </span>
   </a>
@@ -749,10 +788,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#combining-primitives-with-componentexpression-selections" class="md-nav__link">
+  <a href="#format-specific-options" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Combining primitives with ComponentExpression selections
+        Format-specific options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Format-specific options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coloring-a-vtp-by-a-data-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coloring a VTP by a data array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colors-carried-inside-a-ply-or-obj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colors carried inside a PLY or OBJ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
       
     </span>
   </a>
@@ -760,10 +838,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-references" class="md-nav__link">
+  <a href="#current-limitations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using references
+        Current limitations
       
     </span>
   </a>
@@ -790,96 +868,141 @@
   
 
 
-<h1 id="molviewspec-primitives">MolViewSpec primitives</h1>
-<p>MolViewSpec supports geometric primitives such as circles, arrows, tubes etc. These can be freely added to scenes as 
-needed and provide a powerful tool to add custom annotations. Primitives usually require that one or more positions are 
-defined, which can be done by providing 3D vectors or by leveraging <a href="../selectors/">Selectors</a>. Selectors can reference
-the position of specific atoms or residues without requiring you to manually obtain their 3D coordinates.</p>
-<h2 id="custom-visuals-using-3d-vectors">Custom visuals using 3D vectors</h2>
-<p>Acquire a builder instance as usual. Call <code>.primitives</code> to enter the primitives mode and start defining one or more 
-geometric shapes. You can customize the visuals of all primitives at this stage as well and make e.g. everything 
-semi-transparent. 
+<h1 id="molviewspec-shapes">MolViewSpec shapes</h1>
+<p>Not every visual in a scene is a molecule or a density map. Segmentations from cryo-ET, surfaces
+produced by an analysis pipeline, and meshes exported from a modelling tool all arrive as plain 3D
+geometry files. MolViewSpec loads these through the <code>shape</code> node, which supports three formats:
+VTK PolyData (<code>vtp</code>), <code>ply</code> and <code>obj</code>.</p>
+<p>Before <code>shape</code> existed the only way to show such a mesh was to convert it offline into a
+<code>primitives</code> node with inline <code>vertices</code> and <code>indices</code> arrays, which does not scale — a mesh with
+25,000 vertices becomes several megabytes of JSON.</p>
+<h2 id="parsing-a-file">Parsing a file</h2>
+<p>The flow matches volumetric data: <code>download</code>, <code>parse</code>, and then <code>shape</code> (comparable to <code>volume</code> or
+<code>model_structure</code>). The format is given once, in the parse step.</p>
 <div class="highlight"><pre><span></span><code><span class="n">builder</span> <span class="o">=</span> <span class="n">create_builder</span><span class="p">()</span>
-<span class="n">builder</span><span class="o">.</span><span class="n">primitives</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.66</span><span class="p">)</span>
-</code></pre></div></p>
-<p>A range of functions are available to define: 
-<code>mesh | lines | tube | arrow | distance | angle | label | ellipse | ellipsoid | sphere | box</code>.</p>
-<p>Most of them expect positions to be provided to define start and end point or the direction/orientation of a shape. Each
-shape can be further customized using representation-specific parameters.</p>
-<div class="highlight"><pre><span></span><code><span class="o">.</span><span class="n">arrow</span><span class="p">(</span>
-    <span class="n">start</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="n">direction</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="n">tube_radius</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
-    <span class="n">show_end_cap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">"#ff00ff"</span><span class="p">,</span>
-    <span class="n">tooltip</span><span class="o">=</span><span class="s2">"Y"</span><span class="p">,</span>
-<span class="p">)</span>
-</code></pre></div>
-<h2 id="combining-primitives-with-componentexpression-selections">Combining primitives with <code>ComponentExpression</code> selections</h2>
-<p><a href="../selectors/">Selectors</a> are compatible with this part of the API, allowing you to reference the spatial coordinates
-of parts of a structure without the need of obtaining their 3D positional data explicitly.</p>
-<p>The following example showcases how a <code>ComponentExpression</code> is used to defined start and end point of a distance 
-measurement that will add a dashed length between both referenced residues and label it with the computed distance 
-between the two residues.</p>
-<div class="highlight"><pre><span></span><code><span class="n">builder</span> <span class="o">=</span> <span class="n">create_builder</span><span class="p">()</span>
-<span class="n">structure</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">_url_for_mmcif</span><span class="p">(</span><span class="s2">"1tqn"</span><span class="p">))</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"mmcif"</span><span class="p">)</span><span class="o">.</span><span class="n">model_structure</span><span class="p">()</span>
-<span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">"polymer"</span><span class="p">)</span><span class="o">.</span><span class="n">representation</span><span class="p">()</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">))</span>
-<span class="p">(</span>
-    <span class="n">structure</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="p">[</span><span class="n">ComponentExpression</span><span class="p">(</span><span class="n">auth_seq_id</span><span class="o">=</span><span class="mi">258</span><span class="p">),</span> <span class="n">ComponentExpression</span><span class="p">(</span><span class="n">auth_seq_id</span><span class="o">=</span><span class="mi">508</span><span class="p">)])</span>
-    <span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"ball_and_stick"</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"green"</span><span class="p">)</span>
-<span class="p">)</span>
-</code></pre></div>
-<p>The following snippet creates primitives in the context of this structure.</p>
-<div class="highlight"><pre><span></span><code><span class="n">structure</span><span class="o">.</span><span class="n">primitives</span><span class="p">()</span>
-<span class="o">.</span><span class="n">distance</span><span class="p">(</span>
-    <span class="n">start</span><span class="o">=</span><span class="n">ComponentExpression</span><span class="p">(</span><span class="n">auth_seq_id</span><span class="o">=</span><span class="mi">258</span><span class="p">),</span>
-    <span class="n">end</span><span class="o">=</span><span class="n">ComponentExpression</span><span class="p">(</span><span class="n">auth_seq_id</span><span class="o">=</span><span class="mi">508</span><span class="p">),</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span>
-    <span class="n">radius</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
-    <span class="n">dash_length</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
-    <span class="n">label_template</span><span class="o">=</span><span class="s2">"Distance: {{distance}}"</span><span class="p">,</span>
-    <span class="n">label_color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span>
-<span class="p">)</span>
-</code></pre></div>
-<h2 id="using-references">Using references</h2>
-<p>More complex cases will involve multiple structures. <code>ComponentExpression</code> can be tied to specific structures using 
-explicit references. This allows e.g. to distance measurements between two distinct structures. </p>
-<p>This example loads two structures: 1tqn and 1cbs. Note the <code>.model_structure(ref="X")</code> invocations that assign a 
-user-defined reference to each structures. This allows pointing to these structures as <code>X</code> and <code>Y</code> when defining 
-primitives using Selectors.</p>
-<div class="highlight"><pre><span></span><code><span class="n">builder</span> <span class="o">=</span> <span class="n">create_builder</span><span class="p">()</span>
-<span class="n">_1tqn</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">_url_for_mmcif</span><span class="p">(</span><span class="s2">"1tqn"</span><span class="p">))</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"mmcif"</span><span class="p">)</span><span class="o">.</span><span class="n">model_structure</span><span class="p">(</span><span class="n">ref</span><span class="o">=</span><span class="s2">"X"</span><span class="p">)</span>
-<span class="n">_1tqn</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">"polymer"</span><span class="p">)</span><span class="o">.</span><span class="n">representation</span><span class="p">()</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">)</span>
-<span class="p">(</span>
-    <span class="n">_1tqn</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="n">ComponentExpression</span><span class="p">(</span><span class="n">auth_seq_id</span><span class="o">=</span><span class="mi">508</span><span class="p">))</span>
-    <span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"ball_and_stick"</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"green"</span><span class="p">)</span>
-<span class="p">)</span>
 
-<span class="n">_1cbs</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">_url_for_mmcif</span><span class="p">(</span><span class="s2">"1cbs"</span><span class="p">))</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"mmcif"</span><span class="p">)</span><span class="o">.</span><span class="n">model_structure</span><span class="p">(</span><span class="n">ref</span><span class="o">=</span><span class="s2">"Y"</span><span class="p">)</span>
-<span class="n">_1cbs</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">"polymer"</span><span class="p">)</span><span class="o">.</span><span class="n">representation</span><span class="p">()</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">)</span>
-<span class="p">(</span>
-    <span class="n">_1cbs</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="n">ComponentExpression</span><span class="p">(</span><span class="n">auth_seq_id</span><span class="o">=</span><span class="mi">200</span><span class="p">))</span>
-    <span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"ball_and_stick"</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"green"</span><span class="p">)</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">"https://example.org/surface.vtp"</span><span class="p">)</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"vtp"</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">()</span>
+</code></pre></div>
+<p>The <code>shape</code> node has no parameters of its own. Color is applied with a child <code>color</code> node, and
+<code>opacity</code>, <code>clip</code>, <code>transform</code>, <code>instance</code> and <code>focus</code> attach to it in the usual way.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">"https://example.org/surface.vtp"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"vtp"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">shape</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"#3b82f6"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">opacity</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
-<p>Now, individual sequence positions can be used as value for the start and end position of this distance measurement 
-despite them coming from separate structures.</p>
+<h2 id="format-specific-options">Format-specific options</h2>
+<p>Some capabilities exist in only one of the three formats — a VTP carries named data arrays, a PLY
+may store per-vertex colors, an OBJ groups faces by material. Rather than adding parameters to the
+spec that are meaningful for one format and inert for the others, these travel as <strong>custom
+properties</strong>, prefixed by the format they apply to.</p>
+<h3 id="coloring-a-vtp-by-a-data-array">Coloring a VTP by a data array</h3>
+<p>A VTP can carry per-point and per-cell data arrays. <code>vtp_attribute</code> names the one to color by and
+<code>vtp_attribute_source</code> says which of the two it is. A per-cell value is assigned to each vertex as
+the arithmetic mean over all triangles incident to that vertex; vertices belonging to no triangle
+take the value 0.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span>
-    <span class="n">builder</span><span class="o">.</span><span class="n">primitives</span><span class="p">()</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span>
-        <span class="n">start</span><span class="o">=</span><span class="n">PrimitiveComponentExpressions</span><span class="p">(</span><span class="n">structure_ref</span><span class="o">=</span><span class="s2">"X"</span><span class="p">,</span> <span class="n">expressions</span><span class="o">=</span><span class="p">[</span><span class="n">ComponentExpression</span><span class="p">(</span><span class="n">auth_seq_id</span><span class="o">=</span><span class="mi">508</span><span class="p">)]),</span>
-        <span class="n">end</span><span class="o">=</span><span class="n">PrimitiveComponentExpressions</span><span class="p">(</span><span class="n">structure_ref</span><span class="o">=</span><span class="s2">"Y"</span><span class="p">,</span> <span class="n">expressions</span><span class="o">=</span><span class="p">[</span><span class="n">ComponentExpression</span><span class="p">(</span><span class="n">auth_seq_id</span><span class="o">=</span><span class="mi">200</span><span class="p">)]),</span>
-        <span class="n">color</span><span class="o">=</span><span class="s2">"purple"</span><span class="p">,</span>
-        <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">dash_length</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">label_template</span><span class="o">=</span><span class="s2">"Ligand Distance: {{distance}}"</span><span class="p">,</span>
-        <span class="n">label_color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">"https://example.org/capsid.vtp"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"vtp"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">shape</span><span class="p">(</span>
+        <span class="n">custom</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">"vtp_attribute"</span><span class="p">:</span> <span class="s2">"tile_id"</span><span class="p">,</span>
+            <span class="s2">"vtp_attribute_source"</span><span class="p">:</span> <span class="s2">"cell"</span><span class="p">,</span>
+            <span class="s2">"vtp_palette"</span><span class="p">:</span> <span class="s2">"turbo"</span><span class="p">,</span>
+        <span class="p">}</span>
     <span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
-<p><img alt="Distance" src="../files/distance-primitive.png" title="Distance primitive drawn between 2 structures" /></p>
+<p><code>vtp_palette</code> names the color list the values are mapped through. By default the scale spans the
+minimum and maximum of the values in the file, which means two scenes built from different files
+are not directly comparable. <code>vtp_domain</code> pins it:</p>
+<div class="highlight"><pre><span></span><code><span class="o">.</span><span class="n">shape</span><span class="p">(</span>
+    <span class="n">custom</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"vtp_attribute"</span><span class="p">:</span> <span class="s2">"tile_id"</span><span class="p">,</span>
+        <span class="s2">"vtp_attribute_source"</span><span class="p">:</span> <span class="s2">"cell"</span><span class="p">,</span>
+        <span class="s2">"vtp_palette"</span><span class="p">:</span> <span class="s2">"viridis"</span><span class="p">,</span>
+        <span class="s2">"vtp_domain"</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Only single-component (scalar) arrays are supported.</p>
+<h3 id="colors-carried-inside-a-ply-or-obj">Colors carried inside a PLY or OBJ</h3>
+<p>Both formats can store their own colors. <code>ply_coloring</code> and <code>obj_coloring</code> choose whether to use
+them; the default in both cases is <code>uniform</code>, i.e. the color from the <code>color</code> child node.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># PLY, using the per-vertex colors stored in the file</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">"https://example.org/scan.ply"</span><span class="p">)</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"ply"</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span>
+    <span class="n">custom</span><span class="o">=</span><span class="p">{</span><span class="s2">"ply_coloring"</span><span class="p">:</span> <span class="s2">"vertex"</span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>For OBJ, <code>custom</code> colors each material group individually. The material names come from the OBJ's
+own <code>usemtl</code> directives, so no MTL file is involved. Materials that are not listed render grey.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">"https://example.org/cell.obj"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"obj"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">shape</span><span class="p">(</span>
+        <span class="n">custom</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">"obj_coloring"</span><span class="p">:</span> <span class="s2">"custom"</span><span class="p">,</span>
+            <span class="s2">"obj_material_colors"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"membrane"</span><span class="p">:</span> <span class="s2">"#ff3b30"</span><span class="p">,</span> <span class="s2">"cytosol"</span><span class="p">:</span> <span class="s2">"steelblue"</span><span class="p">},</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>
+<h2 id="reference">Reference</h2>
+<table>
+<thead>
+<tr>
+<th>custom property</th>
+<th>applies to</th>
+<th>values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vtp_attribute</code></td>
+<td>VTP</td>
+<td>name of the data array to color by</td>
+</tr>
+<tr>
+<td><code>vtp_attribute_source</code></td>
+<td>VTP</td>
+<td><code>point</code> or <code>cell</code> (default <code>point</code>)</td>
+</tr>
+<tr>
+<td><code>vtp_palette</code></td>
+<td>VTP</td>
+<td>name of a color list, e.g. <code>viridis</code>, <code>turbo</code> (default <code>viridis</code>)</td>
+</tr>
+<tr>
+<td><code>vtp_domain</code></td>
+<td>VTP</td>
+<td><code>[min, max]</code> for the color scale (default: range of the values)</td>
+</tr>
+<tr>
+<td><code>ply_coloring</code></td>
+<td>PLY</td>
+<td><code>uniform</code>, <code>vertex</code> or <code>material</code> (default <code>uniform</code>)</td>
+</tr>
+<tr>
+<td><code>obj_coloring</code></td>
+<td>OBJ</td>
+<td><code>uniform</code>, <code>vertex</code> or <code>custom</code> (default <code>uniform</code>)</td>
+</tr>
+<tr>
+<td><code>obj_material_colors</code></td>
+<td>OBJ</td>
+<td><code>{ material name: color }</code>, used with <code>obj_coloring: "custom"</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="current-limitations">Current limitations</h2>
+<ul>
+<li>Only the polygons of a VTK PolyData file are rendered; <code>verts</code>, <code>lines</code> and <code>strips</code> are ignored.</li>
+<li>Multi-component VTP arrays (vectors) cannot be used for coloring.</li>
+<li>An OBJ's <code>.mtl</code> file is not read, so <code>obj_coloring: "given"</code> is unavailable. Material colors have
+  to be supplied through <code>obj_material_colors</code>.</li>
+</ul>
 
 
 

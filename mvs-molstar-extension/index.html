@@ -419,6 +419,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../shapes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shapes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../animations/" class="md-nav__link">
         
   
@@ -456,10 +483,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -477,8 +504,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -813,19 +840,19 @@
 <p>The <code>loadMVS</code> function (defined in <a href="https://github.com/molstar/molstar/blob/master/src/extensions/mvs/load.ts">src/extensions/mvs/load.ts</a>) can be used to load MVS view data into Mol* Viewer.</p>
 <p>Example usage:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Fetch a MVS, validate, and load</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/molstar/molstar/master/examples/mvs/1cbs.mvsj&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/molstar/molstar/master/examples/mvs/1cbs.mvsj'</span><span class="p">);</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">rawData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">();</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">mvsData</span><span class="o">:</span><span class="w"> </span><span class="kt">MVSData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MVSData</span><span class="p">.</span><span class="nx">fromMVSJ</span><span class="p">(</span><span class="nx">rawData</span><span class="p">);</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">MVSData</span><span class="p">.</span><span class="nx">isValid</span><span class="p">(</span><span class="nx">mvsData</span><span class="p">))</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`Oh no: </span><span class="si">${</span><span class="nx">MVSData</span><span class="p">.</span><span class="nx">validationIssues</span><span class="p">(</span><span class="nx">mvsData</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="k">await</span><span class="w"> </span><span class="nx">loadMVS</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">plugin</span><span class="p">,</span><span class="w"> </span><span class="nx">mvsData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">replaceExisting</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="p">});</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Loaded this:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">MVSData</span><span class="p">.</span><span class="nx">toPrettyString</span><span class="p">(</span><span class="nx">mvsData</span><span class="p">));</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Loaded this:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">MVSData</span><span class="p">.</span><span class="nx">toMVSJ</span><span class="p">(</span><span class="nx">mvsData</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Loaded this:'</span><span class="p">,</span><span class="w"> </span><span class="nx">MVSData</span><span class="p">.</span><span class="nx">toPrettyString</span><span class="p">(</span><span class="nx">mvsData</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Loaded this:'</span><span class="p">,</span><span class="w"> </span><span class="nx">MVSData</span><span class="p">.</span><span class="nx">toMVSJ</span><span class="p">(</span><span class="nx">mvsData</span><span class="p">));</span>
 
 <span class="c1">// Build a MVS and load</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MVSData</span><span class="p">.</span><span class="nx">createBuilder</span><span class="p">();</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">structure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">builder</span><span class="p">.</span><span class="nx">download</span><span class="p">({</span><span class="w"> </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://www.ebi.ac.uk/pdbe/entry-files/download/1og2_updated.cif&#39;</span><span class="w"> </span><span class="p">}).</span><span class="nx">parse</span><span class="p">({</span><span class="w"> </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;mmcif&#39;</span><span class="w"> </span><span class="p">}).</span><span class="nx">modelStructure</span><span class="p">();</span>
-<span class="nx">structure</span><span class="p">.</span><span class="nx">component</span><span class="p">({</span><span class="w"> </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;polymer&#39;</span><span class="w"> </span><span class="p">}).</span><span class="nx">representation</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cartoon&#39;</span><span class="w"> </span><span class="p">});</span>
-<span class="nx">structure</span><span class="p">.</span><span class="nx">component</span><span class="p">({</span><span class="w"> </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ligand&#39;</span><span class="w"> </span><span class="p">}).</span><span class="nx">representation</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ball_and_stick&#39;</span><span class="w"> </span><span class="p">}).</span><span class="nx">color</span><span class="p">({</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#aa55ff&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">structure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">builder</span><span class="p">.</span><span class="nx">download</span><span class="p">({</span><span class="w"> </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">'https://www.ebi.ac.uk/pdbe/entry-files/download/1og2_updated.cif'</span><span class="w"> </span><span class="p">}).</span><span class="nx">parse</span><span class="p">({</span><span class="w"> </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s1">'mmcif'</span><span class="w"> </span><span class="p">}).</span><span class="nx">modelStructure</span><span class="p">();</span>
+<span class="nx">structure</span><span class="p">.</span><span class="nx">component</span><span class="p">({</span><span class="w"> </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">'polymer'</span><span class="w"> </span><span class="p">}).</span><span class="nx">representation</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">'cartoon'</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">structure</span><span class="p">.</span><span class="nx">component</span><span class="p">({</span><span class="w"> </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">'ligand'</span><span class="w"> </span><span class="p">}).</span><span class="nx">representation</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">'ball_and_stick'</span><span class="w"> </span><span class="p">}).</span><span class="nx">color</span><span class="p">({</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">'#aa55ff'</span><span class="w"> </span><span class="p">});</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">mvsData2</span><span class="o">:</span><span class="w"> </span><span class="kt">MVSData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">builder</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
 <span class="k">await</span><span class="w"> </span><span class="nx">loadMVS</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">plugin</span><span class="p">,</span><span class="w"> </span><span class="nx">mvsData2</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">replaceExisting</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="w"> </span><span class="p">});</span>
 </code></pre></div>
