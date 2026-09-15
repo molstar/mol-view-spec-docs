@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../annotations/">
+        <link rel="prev" href="../selectors/">
       
       
-        <link rel="next" href="../primitives/">
+        <link rel="next" href="../annotations/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Camera Settings - MolViewSpec Documentation</title>
+        <title>MolQL - MolViewSpec Documentation</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mvs-camera-settings" class="md-skip">
+        <a href="#molql-selectors" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Camera Settings
+              MolQL
             
           </span>
         </div>
@@ -308,10 +308,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../molql/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MolQL
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -327,6 +354,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typescript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TypeScript
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primitive positions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primitive positions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TypeScript
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -362,37 +481,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Camera Settings
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../camera-settings/" class="md-nav__link">
         
   
   
@@ -408,59 +500,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#camera-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        camera node
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#focus-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        focus node
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#canvas-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        canvas node
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -765,10 +804,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#camera-node" class="md-nav__link">
+  <a href="#python" class="md-nav__link">
     <span class="md-ellipsis">
       
-        camera node
+        Python
       
     </span>
   </a>
@@ -776,10 +815,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#focus-node" class="md-nav__link">
+  <a href="#typescript" class="md-nav__link">
     <span class="md-ellipsis">
       
-        focus node
+        TypeScript
       
     </span>
   </a>
@@ -787,10 +826,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#canvas-node" class="md-nav__link">
+  <a href="#primitive-positions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        canvas node
+        Primitive positions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primitive positions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TypeScript
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and validation
       
     </span>
   </a>
@@ -817,47 +895,84 @@
   
 
 
-<h1 id="mvs-camera-settings">MVS camera settings</h1>
-<p>Camera position and orientation in MVS views can be adjusted in two ways: using a <code>camera</code> node or a <code>focus</code> node. Global attributes of the MVS view unrelated to camera positioning can be adjusted via a <code>canvas</code> node.</p>
-<h2 id="camera-node"><strong><code>camera</code></strong> node</h2>
-<p>This node instructs to directly set the camera position and orientation. This is done by passing <code>target</code>, <code>position</code>, and optional <code>up</code> vector. The <code>camera</code> node is placed as a child of the <code>root</code> node (see <a href="../tree-schema/#camera">MVS tree schema</a>).</p>
-<p><img alt="Camera parameters" src="../files/camera.png" title="Camera parameters" /></p>
-<p>However, if the <code>target</code> and <code>position</code> vectors were interpreted directly, the resulting view would wildly depend on the camera <em>field of view</em> (FOV). For example, assume we have a sphere with center in the point [0,0,0] and radius 10 Angstroms, and we set <code>target=[0,0,0]</code> and <code>position=[0,0,20]</code>. With a camera with vertical FOV=90&deg;, the sphere will fit into the camera's view nicely, with some margin above and under the sphere. But with a camera with vertical FOV=30&deg;, the top and bottom of sphere will be cropped. To avoid these differences, MVS always uses position of a "reference camera" instead of the real camera position.</p>
-<p>We define the "reference camera" as a camera with such FOV that a sphere with radius <em>R</em> viewed from distance 2<em>R</em> (from the center of the sphere) will just fit into view (i.e. there will be no margin but the sphere will not be cropped). This happens to be FOV = 2 arcsin(1/2) = 60&deg; for perspective projection, and FOV = 2 arctan(1/2) &approx; 53&deg; for orthographic projection.</p>
-<p>When using <strong>perspective</strong> projection, the real camera distance from target and the real camera position can be calculated using these formulas:</p>
-<p><span class="arithmatex">\(d _\mathrm{adj} = d _\mathrm{ref} \cdot \frac{1}{2 \sin(\alpha/2)}\)</span></p>
-<p><span class="arithmatex">\(\mathbf{p} _\mathrm{adj} = \mathbf{t} + (\mathbf{p} _\mathrm{ref} - \mathbf{t}) \cdot \frac{1}{2 \sin(\alpha/2)}\)</span></p>
-<p>Where <span class="arithmatex">\(\alpha\)</span> is the vertical FOV of the real camera, <span class="arithmatex">\(d _\mathrm{ref}\)</span> is the reference camera distance from target, <span class="arithmatex">\(d _\mathrm{adj}\)</span> is the real (adjusted) camera distance from target, <span class="arithmatex">\(\mathbf{t}\)</span> is the target position, <span class="arithmatex">\(\mathbf{p} _\mathrm{ref}\)</span> is the reference camera position (the value in the MVS file), and <span class="arithmatex">\(\mathbf{p} _\mathrm{adj}\)</span> is the real (adjusted) camera position.</p>
-<p>When using <strong>orthographic</strong> projection, the formulas are slightly different:</p>
-<p><span class="arithmatex">\(d _\mathrm{adj} = d _\mathrm{ref} \cdot \frac{1}{2 \tan(\alpha/2)}\)</span></p>
-<p><span class="arithmatex">\(\mathbf{p} _\mathrm{adj} = \mathbf{t} + (\mathbf{p} _\mathrm{ref} - \mathbf{t}) \cdot \frac{1}{2 \tan(\alpha/2)}\)</span></p>
-<p>The following image illustrates the camera position adjustment (left: reference camera with FOV=60&deg;, right: real camera with FOV=30&deg; must be positioned further from the target to obtain a similar view):</p>
-<p><img alt="Camera position adjustment (left: reference camera, right: real camera)" src="../files/camera-adjustment.png" title="Camera position adjustment (left: reference camera, right: real camera)" /></p>
-<p>Using the example above (<code>target=[0,0,0]</code> and <code>position=[0,0,20]</code>), we can calculate that the real camera position will have to be set to:</p>
+<h1 id="molql-selectors">MolQL selectors</h1>
+<p><a href="https://molql.org/">MolQL</a> is a composable query language for selecting atoms and residues. MolViewSpec supports serialized base MolQL expressions anywhere a component selector is accepted, including <code>component</code> and <code>color</code> nodes. MolQL expressions can also define positions for primitives such as distance measurements.</p>
+<p>An MVS document stores a MolQL selector as JSON under a <code>molql</code> key. Selection-language text is transpiled while the state is created, so the viewer receives only the resulting expression tree:</p>
+<div class="highlight"><pre><span></span><code>{
+  "molql": &lt;expression&gt;
+}
+</code></pre></div>
+<h2 id="python">Python</h2>
+<p>Import the canonical <code>molql</code> namespace to build a base-language expression. Named MolQL arguments retain their hyphenated spelling:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">molviewspec</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_builder</span><span class="p">,</span> <span class="n">molql</span>
+
+<span class="n">builder</span> <span class="o">=</span> <span class="n">create_builder</span><span class="p">()</span>
+<span class="n">structure</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">"https://files.wwpdb.org/download/1iep.cif"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"mmcif"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">assembly_structure</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="n">ligand</span> <span class="o">=</span> <span class="n">molql</span><span class="o">.</span><span class="n">struct</span><span class="o">.</span><span class="n">generator</span><span class="o">.</span><span class="n">atom_groups</span><span class="p">({</span>
+    <span class="s2">"chain-test"</span><span class="p">:</span> <span class="n">molql</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">rel</span><span class="o">.</span><span class="n">eq</span><span class="p">([</span>
+        <span class="n">molql</span><span class="o">.</span><span class="n">struct</span><span class="o">.</span><span class="n">atom_property</span><span class="o">.</span><span class="n">macromolecular</span><span class="o">.</span><span class="n">label_asym_id</span><span class="p">(),</span>
+        <span class="s2">"G"</span><span class="p">,</span>
+    <span class="p">]),</span>
+<span class="p">})</span>
+
+<span class="n">structure</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="n">molql</span><span class="o">.</span><span class="n">selector</span><span class="p">(</span><span class="n">ligand</span><span class="p">))</span>
+</code></pre></div>
+<p>PyMOL selection text can be eagerly transpiled to the same base MolQL representation:</p>
+<div class="highlight"><pre><span></span><code><span class="n">pocket</span> <span class="o">=</span> <span class="n">molql</span><span class="o">.</span><span class="n">from_pymol</span><span class="p">(</span><span class="s2">"byres polymer within 5 of resn STI"</span><span class="p">)</span>
+<span class="n">structure</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="n">molql</span><span class="o">.</span><span class="n">selector</span><span class="p">(</span><span class="n">pocket</span><span class="p">))</span>
+</code></pre></div>
+<p>The generic <code>molql.transpile(source, language="pymol")</code> entry point is also available. <code>molql.from_pymol</code> is preferable when the input language is known statically.</p>
+<h2 id="typescript">TypeScript</h2>
+<p>The base-language builder is exported as <code>molql</code>. Transpilers use independent package entry points so applications only include parsers they import:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createBuilder</span><span class="p">,</span><span class="w"> </span><span class="nx">molql</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@molstar/molviewspec"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">pymol</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@molstar/molviewspec/molql/pymol"</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createBuilder</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">structure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">builder</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">download</span><span class="p">({</span><span class="w"> </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">"https://files.wwpdb.org/download/1iep.cif"</span><span class="w"> </span><span class="p">})</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">parse</span><span class="p">({</span><span class="w"> </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s2">"mmcif"</span><span class="w"> </span><span class="p">})</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">assemblyStructure</span><span class="p">();</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">ligand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">molql</span><span class="p">.</span><span class="nx">struct</span><span class="p">.</span><span class="nx">generator</span><span class="p">.</span><span class="nx">atomGroups</span><span class="p">({</span>
+<span class="w">  </span><span class="s2">"chain-test"</span><span class="o">:</span><span class="w"> </span><span class="nx">molql</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">rel</span><span class="p">.</span><span class="nx">eq</span><span class="p">([</span>
+<span class="w">    </span><span class="nx">molql</span><span class="p">.</span><span class="nx">struct</span><span class="p">.</span><span class="nx">atomProperty</span><span class="p">.</span><span class="nx">macromolecular</span><span class="p">.</span><span class="nx">label_asym_id</span><span class="p">(),</span>
+<span class="w">    </span><span class="s2">"G"</span><span class="p">,</span>
+<span class="w">  </span><span class="p">]),</span>
+<span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">pocket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pymol</span><span class="p">.</span><span class="nx">transpile</span><span class="p">(</span><span class="s2">"byres polymer within 5 of resn STI"</span><span class="p">);</span>
+
+<span class="nx">structure</span><span class="p">.</span><span class="nx">component</span><span class="p">({</span><span class="w"> </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="kt">molql.selector</span><span class="p">(</span><span class="nx">ligand</span><span class="p">)</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">structure</span><span class="p">.</span><span class="nx">component</span><span class="p">({</span><span class="w"> </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="kt">molql.selector</span><span class="p">(</span><span class="nx">pocket</span><span class="p">)</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div>
+<h2 id="primitive-positions">Primitive positions</h2>
+<p>Use <code>molql.position</code> when an expression should resolve to a position for a primitive. A structure reference is optional and is useful when the state contains multiple structures:</p>
+<h3 id="python_1">Python</h3>
+<div class="highlight"><pre><span></span><code><span class="n">structure</span><span class="o">.</span><span class="n">primitives</span><span class="p">()</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span>
+    <span class="n">start</span><span class="o">=</span><span class="n">molql</span><span class="o">.</span><span class="n">position</span><span class="p">(</span><span class="n">ligand_atom</span><span class="p">),</span>
+    <span class="n">end</span><span class="o">=</span><span class="n">molql</span><span class="o">.</span><span class="n">position</span><span class="p">(</span><span class="n">protein_atom</span><span class="p">,</span> <span class="n">structure_ref</span><span class="o">=</span><span class="s2">"protein"</span><span class="p">),</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="typescript_1">TypeScript</h3>
+<div class="highlight"><pre><span></span><code><span class="nx">structure</span><span class="p">.</span><span class="nx">primitives</span><span class="p">().</span><span class="nx">distance</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">start</span><span class="o">:</span><span class="w"> </span><span class="kt">molql.position</span><span class="p">(</span><span class="nx">ligandAtom</span><span class="p">),</span>
+<span class="w">  </span><span class="nx">end</span><span class="o">:</span><span class="w"> </span><span class="kt">molql.position</span><span class="p">(</span><span class="nx">proteinAtom</span><span class="p">,</span><span class="w"> </span><span class="s2">"protein"</span><span class="p">),</span>
+<span class="p">});</span>
+</code></pre></div>
+<h2 id="scope-and-validation">Scope and validation</h2>
+<p>The libraries currently provide:</p>
 <ul>
-<li>[0, 0, 14.14] for FOV=90&deg; (perspective projection)</li>
-<li>[0, 0, 20] for FOV=60&deg; (perspective projection)</li>
-<li>[0, 0, 38.68] for FOV=30&deg; (perspective projection)</li>
+<li>The base MolQL <code>core</code> and <code>structure-query</code> languages.</li>
+<li>Typed programmatic expression builders.</li>
+<li>Eager PyMOL selection transpilation.</li>
+<li>Expression wrappers for selectors and primitive positions.</li>
 </ul>
-<p>Note that for orthographic projection this adjustment achieves that the resulting view does not depend on the FOV value. For perspective projection, this is not possible and there will always be some "fisheye effect", but still it greatly reduces the dependence on FOV and avoids the too-much-zoomed-in and too-much-zoomed-out views when FOV changes.</p>
-<p>The <code>up</code> vector describes how the camera should be rotated around the position-target axis, i.e. it is the vector in 3D space that will be point up when projected on the screen. For this, the <code>up</code> vector must be perpendicular to the position-target axis. However, the MVS specification does not require that the provided <code>up</code> vector be perpendicular. This can be solved by a simple adjustment:</p>
-<p><span class="arithmatex">\(\mathbf{u} _\mathrm{adj} = \mathrm{normalize} ( ((\mathbf{t}-\mathbf{p}) \times \mathbf{u}) \times (\mathbf{t}-\mathbf{p}) )\)</span></p>
-<p>Where <span class="arithmatex">\(\mathbf{u}\)</span> is the unadjusted up vector (the value in the MVS file), <span class="arithmatex">\(\mathbf{u} _\mathrm{adj}\)</span> is the adjusted up vector, <span class="arithmatex">\(\mathbf{t}\)</span> is the target position, and <span class="arithmatex">\(\mathbf{p}\)</span> is the camera position (can be either reference or adjusted camera position, the result will be the same).</p>
-<p>If the up vector parameter is not provided, the default value ([0, 1, 0]) will be used (after adjustment).</p>
-<h2 id="focus-node"><strong><code>focus</code></strong> node</h2>
-<p>The other way to adjust camera is to use a <code>focus</code> node. This node is placed as a child of a <code>component</code> node and instructs to set focus to the parent component (zoom in). This means that the camera target should be set to the center of the bounding sphere of the component, and the camera position should be set so that the bounding sphere just fits into view (vertically and horizontally).</p>
-<p>By default, the camera will be oriented so that the X axis points right, the Y axis points up, and the Z axis points towards the observer. This orientation can be changed using the optional vector parameters <code>direction</code> and <code>up</code> (see <a href="../tree-schema/#focus">MVS tree schema</a>). The <code>direction</code> vector describes the direction from the camera position towards the target position (default [0, 0, -1]). The meaning of the <code>up</code> vector is the same as for the <code>camera</code> node and the same adjustment applies to it (default [0, 1, 0]).</p>
-<p>The reference camera position for a <code>focus</code> node can be calculated as follows:</p>
-<p><span class="arithmatex">\(\mathbf{p} _\mathrm{ref} = \mathbf{t} - \mathrm{normalize}(\mathbf{d}) \cdot 2 r \cdot \max(1, \frac{h}{w})\)</span></p>
-<p>Where <span class="arithmatex">\(\mathbf{t}\)</span> is the target position (center of the bounding sphere of the component), <span class="arithmatex">\(r\)</span> is the radius of the bounding sphere of the component, <span class="arithmatex">\(\mathbf{d}\)</span> is the direction vector, <span class="arithmatex">\(h\)</span> is the height of the viewport, <span class="arithmatex">\(w\)</span> is the width of the viewport, and <span class="arithmatex">\(\mathbf{p} _\mathrm{ref}\)</span> is the reference camera position (see explanation above).</p>
-<p>The following image illustrates the camera position calculation to fit the bounding sphere of a structure:</p>
-<p><img alt="Focus calculation" src="../files/focus.png" title="Focus calculation" /></p>
-<p>Applying the FOV-adjustment formulas from the previous section, we can easily calculate the real position that we have to set to the camera (<span class="arithmatex">\(\mathbf{p} _\mathrm{adj}\)</span>):</p>
-<p>For perspective projection: <span class="arithmatex">\(\mathbf{p} _\mathrm{adj} = \mathbf{t} - \mathrm{normalize}(\mathbf{d}) \cdot \frac{r}{\sin(\alpha/2)} \cdot \max(1, \frac{h}{w})\)</span></p>
-<p>For orthographic projection: <span class="arithmatex">\(\mathbf{p} _\mathrm{adj} = \mathbf{t} - \mathrm{normalize}(\mathbf{d}) \cdot \frac{r}{\tan(\alpha/2)} \cdot \max(1, \frac{h}{w})\)</span></p>
-<h2 id="canvas-node"><strong><code>canvas</code></strong> node</h2>
-<p>Attributes that apply to the MVS view as a whole, but are not related to camera positioning, can be set using a <code>canvas</code> node. This node is placed as a child of the <code>root</code> node (see <a href="../tree-schema/#canvas">MVS tree schema</a>).</p>
-<p>Currently, this only includes one parameter: <code>background_color</code>. Its value can be set to either a <a href="http://www.w3.org/TR/css3-color/#svg-color">X11 color</a> (e.g. <code>"red"</code>), or a hexadecimal color code (e.g. <code>"#FF0011"</code>). If there is no <code>canvas</code> node, the background will be white.</p>
+<p>MolQL Script text parsing is not included. Programmatic queries use the base-language builder directly, and PyMOL text is converted when the MVS state is created. Invalid or unsupported expressions therefore fail before the state is sent to a viewer.</p>
+<p>See the Python and TypeScript <code>08_molql.ipynb</code> notebooks in the repository for a complete example combining programmatic queries, PyMOL selections, selective coloring, and a distance measurement.</p>
 
 
 
